@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link href="@Url.Content("~/Css/def/em.wx.css")"   rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Css/def/login.css")"   rel="stylesheet" type="text/css" />
+    <title>软件登录</title>
+ 
+
+</head>
+<body>
+    <div>
+        <table class="ywcx">
+            <tr>
+                <td class="td_first">
+                    <a href="#"></a>
+
+                </td>
+                <td class="td_second">
+                    <a href="#"></a>
+
+                </td>
+                <td class="td_third">
+                    <a href="#"></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_30">密码查询</td>
+                <td class="td_30">到期日查询</td>
+                <td class="td_30">积分服务</td>
+            </tr>
+            <tr>
+                <td class="td4">
+                    <a href="#"></a>
+                </td>
+                <td class="td5">
+                    <a href="#"></a>
+                </td>
+                <td class="td6">
+                    <a href="#"></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_30">购买充值</td>
+                <td class="td_30">我要优惠</td>
+                <td class="td_30">软件下载</td>
+            </tr>
+        </table>
+    </div>
+    <div id="login">
+        @using (Html.BeginForm("Stock", "Ywcx", FormMethod.Post))
+        {
+            
+            <div class="popwin" id="popwin">
+                <div class="pwinset">
+                    <header>用户登录</header>
+                    <section>
+                        <div class="ln">
+                            <label>请输入手机号码：</label><input type="text" onclick="close()" class="inp" name="txt_name" id="textfield" maxlength="11" />
+                        </div>
+                        <div class="ln" style="border-top: none;">
+                            <label>请输密码：</label><input type="password" class="inp" name="txt_pwd" id="textfield" maxlength="6" />
+                        </div>
+                    </section>
+                    <section>
+                        <div class="tijiao">
+                            <ul>
+                                <li>
+                                    <input type="submit" value="确定" name="action" class="btn" /></li>
+                                <li>
+
+                                    <input id="Button1" type="button" value="注册" class="btn" onclick=" location.assign('Index');" />
+                                </li>
+                            </ul>
+                        </div>
+
+                    </section>
+                    <div class="close" onclick=" location.assign('Index');">×</div>
+                </div>
+            </div>
+        }
+        @*        <script src="@Url.Content("~/js/bq.js")"></script>*@
+        <div class="index_bottom">
+            益盟操盘手 创建于2002年<br />
+            2013 益盟操盘手 版权所有<br />
+            ICP许可证号 沪ICP备06000340
+        </div>
+        <br />
+    </div>
+</body>
+</html>

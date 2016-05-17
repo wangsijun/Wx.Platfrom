@@ -1,0 +1,185 @@
+﻿@{
+    ViewBag.Title = "欢迎语";
+    Layout = "~/Views/Shared/_Message.cshtml";
+}
+@using MobileWx.Model
+@model Message
+@section head{
+    <link href="~/Content/jupload/css/uploadfile.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .input {
+            width: 600px;
+        }
+
+        .summary {
+            width: 600px;
+            height: 120px;
+        }
+
+        .content {
+            width: 600px;
+            height: 250px;
+        }
+
+        .ajax-file-upload-filename {
+            display: none;
+        }
+
+        .ajax-file-upload-progress {
+            width: 120px;
+        }
+
+        .ajax-file-upload-statusbar {
+            width: 150px !important;
+        }
+
+        .ajax-file-upload {
+            overflow: auto !important;
+            height: auto !important;
+        }
+    </style>
+    <script src="~/Content/jupload/js/jquery.uploadfile.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="~/content/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/content/ueditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="~/content/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            $("#upload").uploadFile({
+                url: "@Url.Content("~/Admin/UploadImage")",
+                formData: { subfolder: "docimage" },
+                multiple: false,
+                showStatusAfterSuccess: false,
+                showAbort: false,
+                showDone: false,
+                allowedTypes: "png,jpg,gif,jpeg",
+                onSuccess: function (files, data, xhr) {
+                    if (data != "error" && files.length > 0) {
+                        if (typeof (data.filename) == "undefined") {
+                            eval("data=" + data);
+                        }
+                        $("#preview").attr("src", "@Url.Content("~/Content/docimage/")" + data.filename);
+                        $("#hiddenpreview").val(data.filename);
+                    }
+                }
+            });
+
+            var ue = UE.getEditor('content', {
+                autoHeightEnabled: false,
+                toolbars: [[
+                'source', '|', 'undo', 'redo', '|',
+                'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'removeformat', 'formatmatch', 'autotypeset', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', '|',
+                 'paragraph', 'fontfamily', 'fontsize', '|',
+                'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+                'link', 'unlink',
+                'simpleupload',
+                'date', 'time', 'spechars'
+
+
+                ]]
+            });
+        });
+
+        function document_save() {
+            var isvalid = true;
+            var errMsg = [];
+            if ($("#document_title").val().trim() == "") {
+                errMsg.push("请填写标题");
+                isvalid = false;
+            }
+            if (!isvalid) {
+                $.messager.alert('输入有误', errMsg.join("<br />"), "info");
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Content("~/Admin/SaveMessage")",
+                data: {
+                    Id: $("#document_id").val(),
+                    Title: $("#document_title").val(),
+                    LinkUrl: $("#document_linkurl").val(),
+                    Type: $("#document_type").val(),
+                    Summary: $("#document_summary").val(),
+                    PicName: $("#hiddenpreview").val(),
+                    Tag: $("#document_tag").val(),
+                    Content: UE.getEditor('content').getContent()
+                },
+                success: function (data) {
+                    if (data.Success) {
+                        $("#document_id").val(data.Id);
+                        $.messager.alert("保存成功","保存成功");
+                    }
+                }
+            });
+        }
+        function deletepic() {
+            $("#hiddenpreview").val("");
+            $("#preview").attr("src", "");
+        }
+    </script>
+}
+
+<input type="hidden" name="Id" id="document_id" value="@Model.Id" />
+<input type="hidden" name="Id" id="document_type" value="@Model.Type" />
+<table>
+    <tr>
+        <td>标题</td>
+        <td>
+            <input value="@Model.Title" id="document_title" name="Title" class="input" />
+        </td>
+    </tr>
+    <tr>
+        <td>链接</td>
+        <td>
+            <input value="@Model.LinkUrl" id="document_linkurl" name="LinkUrl" class="input" />
+        </td>
+    </tr>
+    <tr>
+        <td>消息摘要</td>
+        <td>
+            <textarea id="document_summary" class="input" rows="3">@Html.Raw(Model.Summary)</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top;">标题图片</td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <img id="preview" src="@Url.Content("~/Content/docimage/" + Model.PicName)" alt="" title="" style="width: 90px; height:50px; border:solid 1px gray;" />
+                        <br />
+                        <input type="hidden" class="hiddenpreview" id="hiddenpreview" value="@Model.PicName" />
+                        <span style="color: red;" id="msg"></span></td>
+                    <td>
+                        <div id="upload" style="text-align: center; margin: auto;">
+                            上传360*200图片
+                        </div>
+                        <div><input type="button" value="删除图片" onclick="deletepic()" /></div>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+    <tr>
+        <td>详情正文</td>
+        <td>
+            <script id="content" name="content" type="text/plain" style="width: 600px; height: 130px;">@Html.Raw(Model.Content)</script>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;">
+
+            <input type="button" value="保存" onclick="document_save()" />
+        </td>
+    </tr>
+</table>
+<div>
+    <p>说明</p>
+    <p>如果不上传标题图片，新用户关注时只发送文本消息，内容为所填摘要</p>
+    <p>如果上传标题图片，新用户关注时发送图文消息，“标题、摘要、图片、正文”分别对应“标题、摘要、图片和详细内容”</p>
+</div>
+

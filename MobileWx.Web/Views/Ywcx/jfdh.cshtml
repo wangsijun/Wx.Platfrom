@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "积分兑换";
+    ViewBag.css = @Url.Content("~/Css/def/jfdh.css");
+    Layout = "~/Views/Shared/_LayoutYwcx.cshtml";
+}
+
+
+<body style="" class="ui-mobile-viewport ui-overlay-c">
+
+
+
+    <div data-role="page" id="coursePage" data-url="coursePage" tabindex="0" class="ui-page ui-body-c ui-page-footer-fixed ui-page-active">
+
+
+        <div class="bd">
+            <div id="point-account">
+                积分&nbsp;:&nbsp;@ViewBag.jifen<!-- point-label -->
+            </div>
+
+
+            <div id="item-table">
+                <table id="mg" class="ax-grid" style="background-color: transparent; display: inline-table; table-layout: fixed;">
+                    <tbody>
+                        @Html.Raw(@ViewBag.quote)
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>

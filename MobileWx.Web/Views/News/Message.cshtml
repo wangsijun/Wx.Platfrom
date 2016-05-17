@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_LayoutNews.cshtml";
+}
+@model MobileWx.Model.Message
+<div id="header">
+    <h3>@Model.Title</h3>
+    <h4>@Model.RecTime.ToString("yyyy年M月d日")</h4>
+</div>
+<div id="body">
+    @if (!string.IsNullOrWhiteSpace(Model.PicName))
+    {
+        <div style="text-align:center;"><img style="width:300px;" src="@Url.Content("~/Content/docimage/" + Model.PicName)" /></div>
+    }
+    <p>@Html.Raw(Model.Content)</p>
+</div>

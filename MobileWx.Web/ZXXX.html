@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1,initial-scale=1, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link href="Css/def/em.wx.css" rel="stylesheet" />
+     <script src="Js/jquery-2.0.0.min.js" ></script>
+     <script src="Js/em.js" ></script>
+    <title>资讯信息</title>
+    <style type="text/css">
+        input[type="text"] {
+            width:800px;
+        }
+    </style>
+</head>
+<body>
+    <table><caption>头条要闻</caption>
+        <tr><td> <img id="zxtp" /></td>
+            <td style="vertical-align:top;">
+                图片：<input id="ywtp" type="text" /><br />
+                标题：<input id="ywbt" type="text" /><br />
+                详情：<input id="ywxq" type="text" /><br />
+            </td></tr>
+    </table>
+    <table>
+        <caption>大势分析</caption>
+        <tr><td id="dsfx"></td>
+            <td>
+                标题：<input id="dsbt" type="text" /><br />
+                详情：<input id="dsxq" type="text" /><br />
+            </td></tr>
+    </table>
+     <table>
+        <caption>行业研究</caption>
+        <tr><td id="hyyj"></td>
+            <td>
+                标题：<input id="hybt" type="text" /><br />
+                详情：<input id="hyxq" type="text" /><br />
+            </td></tr>
+    </table>
+     <table>
+        <caption>主力资金播报</caption>
+        <tr><td id="zlbb"></td>
+            <td>
+                标题：<input id="zlbt" type="text" /><br />
+                详情：<input id="zlxq" type="text" /><br />
+            </td></tr>
+    </table>
+    <script type="text/javascript">
+        $(function () {
+            //头条要闻
+            em.xhr("http://m.emoney.cn/html3/-1/0.json", function (rtn) {
+                if (rtn.data.ImgNews == null || rtn.data.ImgNews.length == 0) return;
+                $("#zxtp").attr("src", rtn.data.ImgNews[0].imgUrl);
+                $("#ywtp").val(rtn.data.ImgNews[0].imgUrl);
+                $("#ywbt").val(rtn.data.ImgNews[0].n_title);
+                $("#ywxq").val(rtn.data.ImgNews[0].n_id);
+            });
+            //大势分析
+            em.xhr("http://m.emoney.cn/html/SinglePage/jiepan.json", function (rtn) {
+                $("#dsfx").html(rtn.data.T);
+                $("#dsbt").val(rtn.data.T);
+                $("#dsxq").val("http://m.emoney.cn/html/SinglePage/jiepan.html");
+            });
+            
+            //行业研究
+            em.xhr("http://m.emoney.cn/html3/40/0.json", function (rtn) {
+                if (rtn.data.Table == null || rtn.data.Table.length == 0) return;
+                $("#hyyj").html(rtn.data.Table[0].n_title);
+                $("#hybt").val(rtn.data.Table[0].n_title);
+                $("#hyxq").val(rtn.data.Table[0].n_id);
+            });
+
+            //主力资金播报
+            em.xhr("http://m.emoney.cn/html3/yj/0.json", function (rtn) {
+                if (rtn.data.Table == null || rtn.data.Table.length == 0) return;
+                for (var i = 0; i < rtn.data.Table.length; i++)
+                {
+                    if (rtn.data.Table[i].n_title.trim().indexOf("10:00") == 0 || rtn.data.Table[i].n_title.trim().indexOf("10：00") == 0)
+                    {
+                        $("#zlbb").html(rtn.data.Table[i].n_title);
+                        $("#zlbt").val(rtn.data.Table[i].n_title);
+                        $("#zlxq").val(rtn.data.Table[i].n_id);
+                        break;
+                    }
+                }
+               
+            });
+        });
+    </script>
+</body>
+</html>

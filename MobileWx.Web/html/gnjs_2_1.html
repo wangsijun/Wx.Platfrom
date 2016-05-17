@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,initial-scale=1, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link href="../Css/def/style_new.css" rel="stylesheet" />
+    <script src="../Js/jquery-1.4.2.min.js"></script>
+    <script src="../Js/returnTop.js"></script>
+    <title>功能介绍</title>
+
+     <script type="text/javascript">
+        $(document).ready(function () {
+            $(".header .first").toggleClass("a_link");
+            $(".header td").click(function () {               
+                $(".header td").removeClass("a_link");
+                $(this).toggleClass("a_link");
+               var indexId = $(this).index();
+                if (indexId==0) {
+                    $("img", ".content").attr("src", "../Css/def/images/gnjs_1.png");
+                }
+                else if(indexId==1){
+                    $("img", ".content").attr("src", "../Css/def/images/gnjs_2.png");
+                }
+                else if (indexId == 2) {
+                    $("img", ".content").attr("src", "../Css/def/images/gnjs_3.png");
+                }
+                else {
+                    $("img", ".content").attr("src", "../Css/def/images/gnjs_4.png");
+                }
+            });
+        }
+    )</script>
+
+
+</head>
+<body>
+    <div class="header">
+        <table style="width: 100%;">
+            <tr>
+                <td class="first"><span class="sp_1">判大势</span></td>
+                <td><span class="sp_2">选好股</span></td>
+                <td><span class="sp_3">稳操作</span></td>
+                <td><span class="sp_4">全预警</span></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="content">
+        <img src="../Css/def/images/gnjs_1.png" />
+    </div>
+    <br />
+    <div id="returnTop">
+        <a onclick="window.scrollTo(0,0);">
+            <img src="../Css/def/images/returnTop.png" />
+            返回顶部</a>
+    </div>
+</body>
+</html>

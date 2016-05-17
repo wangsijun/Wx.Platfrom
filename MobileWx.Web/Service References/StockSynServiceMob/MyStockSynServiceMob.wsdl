@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetMyStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyStockResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMyStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stockcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMyStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMyStockResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMyStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stockcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMyStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelMyStockResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MyStockCover">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stockcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MyStockCoverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MyStockCoverResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyAndWrite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UidFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UidTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UidOld" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyAndWriteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CopyAndWriteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="anyType" nillable="true" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMyStockSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyStock" />
+  </wsdl:message>
+  <wsdl:message name="GetMyStockSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMyStockSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMyStock" />
+  </wsdl:message>
+  <wsdl:message name="AddMyStockSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMyStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelMyStockSoapIn">
+    <wsdl:part name="parameters" element="tns:DelMyStock" />
+  </wsdl:message>
+  <wsdl:message name="DelMyStockSoapOut">
+    <wsdl:part name="parameters" element="tns:DelMyStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="MyStockCoverSoapIn">
+    <wsdl:part name="parameters" element="tns:MyStockCover" />
+  </wsdl:message>
+  <wsdl:message name="MyStockCoverSoapOut">
+    <wsdl:part name="parameters" element="tns:MyStockCoverResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopyAndWriteSoapIn">
+    <wsdl:part name="parameters" element="tns:CopyAndWrite" />
+  </wsdl:message>
+  <wsdl:message name="CopyAndWriteSoapOut">
+    <wsdl:part name="parameters" element="tns:CopyAndWriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyStockHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMyStockHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="AddMyStockHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="stockcode" type="s:string" />
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddMyStockHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="DelMyStockHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="stockcode" type="s:string" />
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DelMyStockHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="MyStockCoverHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="stockcode" type="s:string" />
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MyStockCoverHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="CopyAndWriteHttpGetIn">
+    <wsdl:part name="UidFrom" type="s:string" />
+    <wsdl:part name="UidTo" type="s:string" />
+    <wsdl:part name="UidOld" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CopyAndWriteHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetMyStockHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMyStockHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="AddMyStockHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="stockcode" type="s:string" />
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddMyStockHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="DelMyStockHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="stockcode" type="s:string" />
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DelMyStockHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="MyStockCoverHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="stockcode" type="s:string" />
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MyStockCoverHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="CopyAndWriteHttpPostIn">
+    <wsdl:part name="UidFrom" type="s:string" />
+    <wsdl:part name="UidTo" type="s:string" />
+    <wsdl:part name="UidOld" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CopyAndWriteHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="MyStockSynServiceMobSoap">
+    <wsdl:operation name="GetMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;获取自选股接口&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码</wsdl:documentation>
+      <wsdl:input message="tns:GetMyStockSoapIn" />
+      <wsdl:output message="tns:GetMyStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;新增自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:AddMyStockSoapIn" />
+      <wsdl:output message="tns:AddMyStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;删除自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:DelMyStockSoapIn" />
+      <wsdl:output message="tns:DelMyStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MyStockCover">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;覆盖自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:MyStockCoverSoapIn" />
+      <wsdl:output message="tns:MyStockCoverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyAndWrite">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自选股互换&lt;br /&gt;UidFrom:拷贝源用户&lt;br /&gt;UidTo:拷贝到用户</wsdl:documentation>
+      <wsdl:input message="tns:CopyAndWriteSoapIn" />
+      <wsdl:output message="tns:CopyAndWriteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MyStockSynServiceMobHttpGet">
+    <wsdl:operation name="GetMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;获取自选股接口&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码</wsdl:documentation>
+      <wsdl:input message="tns:GetMyStockHttpGetIn" />
+      <wsdl:output message="tns:GetMyStockHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;新增自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:AddMyStockHttpGetIn" />
+      <wsdl:output message="tns:AddMyStockHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;删除自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:DelMyStockHttpGetIn" />
+      <wsdl:output message="tns:DelMyStockHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MyStockCover">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;覆盖自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:MyStockCoverHttpGetIn" />
+      <wsdl:output message="tns:MyStockCoverHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyAndWrite">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自选股互换&lt;br /&gt;UidFrom:拷贝源用户&lt;br /&gt;UidTo:拷贝到用户</wsdl:documentation>
+      <wsdl:input message="tns:CopyAndWriteHttpGetIn" />
+      <wsdl:output message="tns:CopyAndWriteHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MyStockSynServiceMobHttpPost">
+    <wsdl:operation name="GetMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;获取自选股接口&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码</wsdl:documentation>
+      <wsdl:input message="tns:GetMyStockHttpPostIn" />
+      <wsdl:output message="tns:GetMyStockHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;新增自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:AddMyStockHttpPostIn" />
+      <wsdl:output message="tns:AddMyStockHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMyStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;删除自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:DelMyStockHttpPostIn" />
+      <wsdl:output message="tns:DelMyStockHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MyStockCover">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;覆盖自选股&lt;/b&gt;&lt;br /&gt;uid:用户编号&lt;br /&gt;pid:产品编号&lt;br /&gt;token:验证码&lt;br /&gt;stockcode:股票代码</wsdl:documentation>
+      <wsdl:input message="tns:MyStockCoverHttpPostIn" />
+      <wsdl:output message="tns:MyStockCoverHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyAndWrite">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自选股互换&lt;br /&gt;UidFrom:拷贝源用户&lt;br /&gt;UidTo:拷贝到用户</wsdl:documentation>
+      <wsdl:input message="tns:CopyAndWriteHttpPostIn" />
+      <wsdl:output message="tns:CopyAndWriteHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyStockSynServiceMobSoap" type="tns:MyStockSynServiceMobSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMyStock">
+      <soap:operation soapAction="http://tempuri.org/GetMyStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMyStock">
+      <soap:operation soapAction="http://tempuri.org/AddMyStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMyStock">
+      <soap:operation soapAction="http://tempuri.org/DelMyStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MyStockCover">
+      <soap:operation soapAction="http://tempuri.org/MyStockCover" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyAndWrite">
+      <soap:operation soapAction="http://tempuri.org/CopyAndWrite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyStockSynServiceMobSoap12" type="tns:MyStockSynServiceMobSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMyStock">
+      <soap12:operation soapAction="http://tempuri.org/GetMyStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMyStock">
+      <soap12:operation soapAction="http://tempuri.org/AddMyStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMyStock">
+      <soap12:operation soapAction="http://tempuri.org/DelMyStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MyStockCover">
+      <soap12:operation soapAction="http://tempuri.org/MyStockCover" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyAndWrite">
+      <soap12:operation soapAction="http://tempuri.org/CopyAndWrite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyStockSynServiceMobHttpGet" type="tns:MyStockSynServiceMobHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetMyStock">
+      <http:operation location="/GetMyStock" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMyStock">
+      <http:operation location="/AddMyStock" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMyStock">
+      <http:operation location="/DelMyStock" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MyStockCover">
+      <http:operation location="/MyStockCover" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyAndWrite">
+      <http:operation location="/CopyAndWrite" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyStockSynServiceMobHttpPost" type="tns:MyStockSynServiceMobHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetMyStock">
+      <http:operation location="/GetMyStock" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMyStock">
+      <http:operation location="/AddMyStock" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMyStock">
+      <http:operation location="/DelMyStock" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MyStockCover">
+      <http:operation location="/MyStockCover" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyAndWrite">
+      <http:operation location="/CopyAndWrite" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyStockSynServiceMob">
+    <wsdl:port name="MyStockSynServiceMobSoap" binding="tns:MyStockSynServiceMobSoap">
+      <soap:address location="http://cloudstock.emoney.cn/MyStockSynServiceMob.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyStockSynServiceMobSoap12" binding="tns:MyStockSynServiceMobSoap12">
+      <soap12:address location="http://cloudstock.emoney.cn/MyStockSynServiceMob.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyStockSynServiceMobHttpGet" binding="tns:MyStockSynServiceMobHttpGet">
+      <http:address location="http://cloudstock.emoney.cn/MyStockSynServiceMob.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyStockSynServiceMobHttpPost" binding="tns:MyStockSynServiceMobHttpPost">
+      <http:address location="http://cloudstock.emoney.cn/MyStockSynServiceMob.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

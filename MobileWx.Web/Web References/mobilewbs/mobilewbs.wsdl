@@ -1,0 +1,2189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="feedbackType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="feedbackContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertBackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wb_HBYJ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stockID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cpNumberID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wb_HBYJResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wb_HBYJResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wb_sp_VerifyUser_ForStockDiagnosis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wb_sp_VerifyUser_ForStockDiagnosisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wb_sp_VerifyUser_ForStockDiagnosisResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_VerifyUser_ForInvestigation_1210">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_VerifyUser_ForInvestigation_1210Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wd_sp_VerifyUser_ForInvestigation_1210Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_addRight_ForInvestigation_1210">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_addRight_ForInvestigation_1210Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wd_sp_addRight_ForInvestigation_1210Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_regUser_lt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_regUser_ltResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_regUser_ltResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInterface">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="app_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="vendor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInterfaceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckInterfaceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLM_UDID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLM_UDIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLM_UDIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToLM_udid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="udid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToLM_udidResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="wd_sp_Zctbjk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IMSI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AT_GUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_ZctbjkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wd_sp_ZctbjkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_Xgmm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpPwdOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpPwdNew" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_XgmmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wd_sp_XgmmResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_Tcdgjk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="funcPoint" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="businessFlag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="autoRelet" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_TcdgjkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wd_sp_TcdgjkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_order_bestTone_interface">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SPID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="muid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="productid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supplyerid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="createdate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="businessFlag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="autoRelet" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_order_bestTone_interfaceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_order_bestTone_interfaceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_Tctdjk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServicesID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wd_sp_TctdjkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wd_sp_TctdjkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="antai_guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_qryOrderInfo_new">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="antai_guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_qryOrderInfo_newResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_qryOrderInfo_newResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADW_add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="udid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sourceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADW_addResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ADW_addResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADW_GetList">
+        <s:complexType />
+      </s:element>
+      <s:element name="ADW_GetListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ADW_GetListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADW_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="udid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADW_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ADW_updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dianru_ADD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="udid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dianru_ADDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Dianru_ADDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dianru_data">
+        <s:complexType />
+      </s:element>
+      <s:element name="Dianru_dataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Dianru_dataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dianru_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="udid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dianru_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Dianru_updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YM_Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="udid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YM_AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="YM_AddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YM_data">
+        <s:complexType />
+      </s:element>
+      <s:element name="YM_dataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YM_dataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YM_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="udid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YM_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="YM_updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Doctor_AddUserPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Doctor_AddUserPhoneResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckFWM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFWMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckFWMResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="phone_bind_weibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="weibo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpPasswd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="phone_bind_weiboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone_bind_weiboResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Yh_GetUserList">
+        <s:complexType />
+      </s:element>
+      <s:element name="Yh_GetUserListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Yh_GetUserListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Yh_UpdateFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ids" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Yh_UpdateFlagResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Yh_qryActiveDegree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Yh_qryActiveDegreeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Yh_qryActiveDegreeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Yh_updateTransactionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Yh_updateTransactionStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="yc_AddUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Model_user" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Model_user">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ModelBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="deviceName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="deviceModel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="deviceVersion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="development" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="status" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="platform" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="pushMode" nillable="true" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ModelBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idx" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="createDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="updateDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="yc_AddUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="yc_AddUserResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="yc_GetTokens">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pushMode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="yc_GetTokensResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yc_GetTokensResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="yc_GetPhones">
+        <s:complexType />
+      </s:element>
+      <s:element name="yc_GetPhonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yc_GetPhonesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="yc_GetUserByGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="yc_GetUserByGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yc_GetUserByGuidResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUserNameAndPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUserNameAndPhoneResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ToCheckIOSPay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="receiptdata" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unique_identifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="product_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="purchase_date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToCheckIOSPayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ToCheckIOSPayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToCheckUdid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="vendor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToCheckUdidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ToCheckUdidResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewUserOrOldUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewUserOrOldUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NewUserOrOldUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Enddate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_EnddateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_EnddateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Exchange_mobile_loyalty_points">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Exchange_mobile_loyalty_pointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Exchange_mobile_loyalty_pointsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_login_forweixin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_login_forweixinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_login_forweixinResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_login_forbaike">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="logintype" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginDaysN" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_login_forbaikeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_login_forbaikeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_exchangePeriod_baike">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_exchangePeriod_baikeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_exchangePeriod_baikeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_qry_mobile_loyalty_points_weixin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_qry_mobile_loyalty_points_weixinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_qry_mobile_loyalty_points_weixinResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_add_mobile_referral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNew" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_add_mobile_referralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_add_mobile_referralResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBackSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBack" />
+  </wsdl:message>
+  <wsdl:message name="InsertBackSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="wb_HBYJSoapIn">
+    <wsdl:part name="parameters" element="tns:wb_HBYJ" />
+  </wsdl:message>
+  <wsdl:message name="wb_HBYJSoapOut">
+    <wsdl:part name="parameters" element="tns:wb_HBYJResponse" />
+  </wsdl:message>
+  <wsdl:message name="wb_sp_VerifyUser_ForStockDiagnosisSoapIn">
+    <wsdl:part name="parameters" element="tns:wb_sp_VerifyUser_ForStockDiagnosis" />
+  </wsdl:message>
+  <wsdl:message name="wb_sp_VerifyUser_ForStockDiagnosisSoapOut">
+    <wsdl:part name="parameters" element="tns:wb_sp_VerifyUser_ForStockDiagnosisResponse" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_VerifyUser_ForInvestigation_1210SoapIn">
+    <wsdl:part name="parameters" element="tns:wd_sp_VerifyUser_ForInvestigation_1210" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_VerifyUser_ForInvestigation_1210SoapOut">
+    <wsdl:part name="parameters" element="tns:wd_sp_VerifyUser_ForInvestigation_1210Response" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_addRight_ForInvestigation_1210SoapIn">
+    <wsdl:part name="parameters" element="tns:wd_sp_addRight_ForInvestigation_1210" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_addRight_ForInvestigation_1210SoapOut">
+    <wsdl:part name="parameters" element="tns:wd_sp_addRight_ForInvestigation_1210Response" />
+  </wsdl:message>
+  <wsdl:message name="sp_regUser_ltSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_regUser_lt" />
+  </wsdl:message>
+  <wsdl:message name="sp_regUser_ltSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_regUser_ltResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInterfaceSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckInterface" />
+  </wsdl:message>
+  <wsdl:message name="CheckInterfaceSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckInterfaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLM_UDIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLM_UDID" />
+  </wsdl:message>
+  <wsdl:message name="GetLM_UDIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLM_UDIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToLM_udidSoapIn">
+    <wsdl:part name="parameters" element="tns:ToLM_udid" />
+  </wsdl:message>
+  <wsdl:message name="ToLM_udidSoapOut">
+    <wsdl:part name="parameters" element="tns:ToLM_udidResponse" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_ZctbjkSoapIn">
+    <wsdl:part name="parameters" element="tns:wd_sp_Zctbjk" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_ZctbjkSoapOut">
+    <wsdl:part name="parameters" element="tns:wd_sp_ZctbjkResponse" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_XgmmSoapIn">
+    <wsdl:part name="parameters" element="tns:wd_sp_Xgmm" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_XgmmSoapOut">
+    <wsdl:part name="parameters" element="tns:wd_sp_XgmmResponse" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_TcdgjkSoapIn">
+    <wsdl:part name="parameters" element="tns:wd_sp_Tcdgjk" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_TcdgjkSoapOut">
+    <wsdl:part name="parameters" element="tns:wd_sp_TcdgjkResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_order_bestTone_interfaceSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_order_bestTone_interface" />
+  </wsdl:message>
+  <wsdl:message name="sp_order_bestTone_interfaceSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_order_bestTone_interfaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_TctdjkSoapIn">
+    <wsdl:part name="parameters" element="tns:wd_sp_Tctdjk" />
+  </wsdl:message>
+  <wsdl:message name="wd_sp_TctdjkSoapOut">
+    <wsdl:part name="parameters" element="tns:wd_sp_TctdjkResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryPassword" />
+  </wsdl:message>
+  <wsdl:message name="QueryPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_qryOrderInfo_newSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_qryOrderInfo_new" />
+  </wsdl:message>
+  <wsdl:message name="sp_qryOrderInfo_newSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_qryOrderInfo_newResponse" />
+  </wsdl:message>
+  <wsdl:message name="ADW_addSoapIn">
+    <wsdl:part name="parameters" element="tns:ADW_add" />
+  </wsdl:message>
+  <wsdl:message name="ADW_addSoapOut">
+    <wsdl:part name="parameters" element="tns:ADW_addResponse" />
+  </wsdl:message>
+  <wsdl:message name="ADW_GetListSoapIn">
+    <wsdl:part name="parameters" element="tns:ADW_GetList" />
+  </wsdl:message>
+  <wsdl:message name="ADW_GetListSoapOut">
+    <wsdl:part name="parameters" element="tns:ADW_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ADW_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:ADW_update" />
+  </wsdl:message>
+  <wsdl:message name="ADW_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:ADW_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Dianru_ADDSoapIn">
+    <wsdl:part name="parameters" element="tns:Dianru_ADD" />
+  </wsdl:message>
+  <wsdl:message name="Dianru_ADDSoapOut">
+    <wsdl:part name="parameters" element="tns:Dianru_ADDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Dianru_dataSoapIn">
+    <wsdl:part name="parameters" element="tns:Dianru_data" />
+  </wsdl:message>
+  <wsdl:message name="Dianru_dataSoapOut">
+    <wsdl:part name="parameters" element="tns:Dianru_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Dianru_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:Dianru_update" />
+  </wsdl:message>
+  <wsdl:message name="Dianru_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:Dianru_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="YM_AddSoapIn">
+    <wsdl:part name="parameters" element="tns:YM_Add" />
+  </wsdl:message>
+  <wsdl:message name="YM_AddSoapOut">
+    <wsdl:part name="parameters" element="tns:YM_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="YM_dataSoapIn">
+    <wsdl:part name="parameters" element="tns:YM_data" />
+  </wsdl:message>
+  <wsdl:message name="YM_dataSoapOut">
+    <wsdl:part name="parameters" element="tns:YM_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="YM_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:YM_update" />
+  </wsdl:message>
+  <wsdl:message name="YM_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:YM_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Doctor_AddUserPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:Doctor_AddUserPhone" />
+  </wsdl:message>
+  <wsdl:message name="Doctor_AddUserPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:Doctor_AddUserPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckFWMSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckFWM" />
+  </wsdl:message>
+  <wsdl:message name="CheckFWMSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckFWMResponse" />
+  </wsdl:message>
+  <wsdl:message name="phone_bind_weiboSoapIn">
+    <wsdl:part name="parameters" element="tns:phone_bind_weibo" />
+  </wsdl:message>
+  <wsdl:message name="phone_bind_weiboSoapOut">
+    <wsdl:part name="parameters" element="tns:phone_bind_weiboResponse" />
+  </wsdl:message>
+  <wsdl:message name="Yh_GetUserListSoapIn">
+    <wsdl:part name="parameters" element="tns:Yh_GetUserList" />
+  </wsdl:message>
+  <wsdl:message name="Yh_GetUserListSoapOut">
+    <wsdl:part name="parameters" element="tns:Yh_GetUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Yh_UpdateFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:Yh_UpdateFlag" />
+  </wsdl:message>
+  <wsdl:message name="Yh_UpdateFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:Yh_UpdateFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="Yh_qryActiveDegreeSoapIn">
+    <wsdl:part name="parameters" element="tns:Yh_qryActiveDegree" />
+  </wsdl:message>
+  <wsdl:message name="Yh_qryActiveDegreeSoapOut">
+    <wsdl:part name="parameters" element="tns:Yh_qryActiveDegreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Yh_updateTransactionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:Yh_updateTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="Yh_updateTransactionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:Yh_updateTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="yc_AddUserSoapIn">
+    <wsdl:part name="parameters" element="tns:yc_AddUser" />
+  </wsdl:message>
+  <wsdl:message name="yc_AddUserSoapOut">
+    <wsdl:part name="parameters" element="tns:yc_AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="yc_GetTokensSoapIn">
+    <wsdl:part name="parameters" element="tns:yc_GetTokens" />
+  </wsdl:message>
+  <wsdl:message name="yc_GetTokensSoapOut">
+    <wsdl:part name="parameters" element="tns:yc_GetTokensResponse" />
+  </wsdl:message>
+  <wsdl:message name="yc_GetPhonesSoapIn">
+    <wsdl:part name="parameters" element="tns:yc_GetPhones" />
+  </wsdl:message>
+  <wsdl:message name="yc_GetPhonesSoapOut">
+    <wsdl:part name="parameters" element="tns:yc_GetPhonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="yc_GetUserByGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:yc_GetUserByGuid" />
+  </wsdl:message>
+  <wsdl:message name="yc_GetUserByGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:yc_GetUserByGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserNameAndPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertUserNameAndPhone" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserNameAndPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertUserNameAndPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToCheckIOSPaySoapIn">
+    <wsdl:part name="parameters" element="tns:ToCheckIOSPay" />
+  </wsdl:message>
+  <wsdl:message name="ToCheckIOSPaySoapOut">
+    <wsdl:part name="parameters" element="tns:ToCheckIOSPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToCheckUdidSoapIn">
+    <wsdl:part name="parameters" element="tns:ToCheckUdid" />
+  </wsdl:message>
+  <wsdl:message name="ToCheckUdidSoapOut">
+    <wsdl:part name="parameters" element="tns:ToCheckUdidResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewUserOrOldUserSoapIn">
+    <wsdl:part name="parameters" element="tns:NewUserOrOldUser" />
+  </wsdl:message>
+  <wsdl:message name="NewUserOrOldUserSoapOut">
+    <wsdl:part name="parameters" element="tns:NewUserOrOldUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_EnddateSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Enddate" />
+  </wsdl:message>
+  <wsdl:message name="Get_EnddateSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_EnddateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Exchange_mobile_loyalty_pointsSoapIn">
+    <wsdl:part name="parameters" element="tns:Exchange_mobile_loyalty_points" />
+  </wsdl:message>
+  <wsdl:message name="Exchange_mobile_loyalty_pointsSoapOut">
+    <wsdl:part name="parameters" element="tns:Exchange_mobile_loyalty_pointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_login_forweixinSoapIn">
+    <wsdl:part name="parameters" element="tns:User_login_forweixin" />
+  </wsdl:message>
+  <wsdl:message name="User_login_forweixinSoapOut">
+    <wsdl:part name="parameters" element="tns:User_login_forweixinResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_login_forbaikeSoapIn">
+    <wsdl:part name="parameters" element="tns:User_login_forbaike" />
+  </wsdl:message>
+  <wsdl:message name="User_login_forbaikeSoapOut">
+    <wsdl:part name="parameters" element="tns:User_login_forbaikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_exchangePeriod_baikeSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_exchangePeriod_baike" />
+  </wsdl:message>
+  <wsdl:message name="sp_exchangePeriod_baikeSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_exchangePeriod_baikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_qry_mobile_loyalty_points_weixinSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_qry_mobile_loyalty_points_weixin" />
+  </wsdl:message>
+  <wsdl:message name="sp_qry_mobile_loyalty_points_weixinSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_qry_mobile_loyalty_points_weixinResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_add_mobile_referralSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_add_mobile_referral" />
+  </wsdl:message>
+  <wsdl:message name="sp_add_mobile_referralSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_add_mobile_referralResponse" />
+  </wsdl:message>
+  <wsdl:portType name="mobilewbsSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBack">
+      <wsdl:input message="tns:InsertBackSoapIn" />
+      <wsdl:output message="tns:InsertBackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wb_HBYJ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;号百预警&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:wb_HBYJSoapIn" />
+      <wsdl:output message="tns:wb_HBYJSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wb_sp_VerifyUser_ForStockDiagnosis">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;验证手机用户 0：验证通过,-1：手机号为空,-2：未注册,-3：密码错误&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:wb_sp_VerifyUser_ForStockDiagnosisSoapIn" />
+      <wsdl:output message="tns:wb_sp_VerifyUser_ForStockDiagnosisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_VerifyUser_ForInvestigation_1210">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;问卷调查用户登录&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:wd_sp_VerifyUser_ForInvestigation_1210SoapIn" />
+      <wsdl:output message="tns:wd_sp_VerifyUser_ForInvestigation_1210SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_addRight_ForInvestigation_1210">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;问卷用户提交&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:wd_sp_addRight_ForInvestigation_1210SoapIn" />
+      <wsdl:output message="tns:wd_sp_addRight_ForInvestigation_1210SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_regUser_lt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;号百联通的 注册接口  &gt;=0成功,&lt;0失败&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sp_regUser_ltSoapIn" />
+      <wsdl:output message="tns:sp_regUser_ltSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInterface">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;同步助手数据验证  &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CheckInterfaceSoapIn" />
+      <wsdl:output message="tns:CheckInterfaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLM_UDID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;力美获取有效udid列表  &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetLM_UDIDSoapIn" />
+      <wsdl:output message="tns:GetLM_UDIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToLM_udid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;力美更新传送状态 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ToLM_udidSoapIn" />
+      <wsdl:output message="tns:ToLM_udidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Zctbjk">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;注册同步接口&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:wd_sp_ZctbjkSoapIn" />
+      <wsdl:output message="tns:wd_sp_ZctbjkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Xgmm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;修改密码&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:wd_sp_XgmmSoapIn" />
+      <wsdl:output message="tns:wd_sp_XgmmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Tcdgjk">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;套餐同步订购接口&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:wd_sp_TcdgjkSoapIn" />
+      <wsdl:output message="tns:wd_sp_TcdgjkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_order_bestTone_interface">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;集团号百 套餐同步订购接口&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sp_order_bestTone_interfaceSoapIn" />
+      <wsdl:output message="tns:sp_order_bestTone_interfaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Tctdjk">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;套餐同步退订接口&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:wd_sp_TctdjkSoapIn" />
+      <wsdl:output message="tns:wd_sp_TctdjkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;号百 查询密码&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:QueryPasswordSoapIn" />
+      <wsdl:output message="tns:QueryPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_qryOrderInfo_new">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;安泰 查询&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sp_qryOrderInfo_newSoapIn" />
+      <wsdl:output message="tns:sp_qryOrderInfo_newSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ADW_add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;爱德威 添加 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ADW_addSoapIn" />
+      <wsdl:output message="tns:ADW_addSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ADW_GetList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;爱德威 获取列表 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ADW_GetListSoapIn" />
+      <wsdl:output message="tns:ADW_GetListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ADW_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;爱德威 更新 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ADW_updateSoapIn" />
+      <wsdl:output message="tns:ADW_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_ADD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;点入 接收udid &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Dianru_ADDSoapIn" />
+      <wsdl:output message="tns:Dianru_ADDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_data">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;点入 获取激活列表 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Dianru_dataSoapIn" />
+      <wsdl:output message="tns:Dianru_dataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;点入 更新状态 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Dianru_updateSoapIn" />
+      <wsdl:output message="tns:Dianru_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YM_Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;保存有米传过来的udid  &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:YM_AddSoapIn" />
+      <wsdl:output message="tns:YM_AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YM_data">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;有米获取有效udid列表  &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:YM_dataSoapIn" />
+      <wsdl:output message="tns:YM_dataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YM_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;有米更新传送状态,调用的都是成功传出去的udid  &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:YM_updateSoapIn" />
+      <wsdl:output message="tns:YM_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Doctor_AddUserPhone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;股票医生 添加手机号 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Doctor_AddUserPhoneSoapIn" />
+      <wsdl:output message="tns:Doctor_AddUserPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFWM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;号百服务码验证 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CheckFWMSoapIn" />
+      <wsdl:output message="tns:CheckFWMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="phone_bind_weibo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 微博号码绑定&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:phone_bind_weiboSoapIn" />
+      <wsdl:output message="tns:phone_bind_weiboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Yh_GetUserList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">扫描未注册的用户</wsdl:documentation>
+      <wsdl:input message="tns:Yh_GetUserListSoapIn" />
+      <wsdl:output message="tns:Yh_GetUserListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Yh_UpdateFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">注册成功后，将用户状态回写成1</wsdl:documentation>
+      <wsdl:input message="tns:Yh_UpdateFlagSoapIn" />
+      <wsdl:output message="tns:Yh_UpdateFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Yh_qryActiveDegree">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">银河，根据手机号码查用户,返回 isTransaction,userID,retMsg</wsdl:documentation>
+      <wsdl:input message="tns:Yh_qryActiveDegreeSoapIn" />
+      <wsdl:output message="tns:Yh_qryActiveDegreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Yh_updateTransactionStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">银河，根据手机号码同步成功时回写</wsdl:documentation>
+      <wsdl:input message="tns:Yh_updateTransactionStatusSoapIn" />
+      <wsdl:output message="tns:Yh_updateTransactionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="yc_AddUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">增加推送用户，返回pid</wsdl:documentation>
+      <wsdl:input message="tns:yc_AddUserSoapIn" />
+      <wsdl:output message="tns:yc_AddUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetTokens">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按pushModel取关系</wsdl:documentation>
+      <wsdl:input message="tns:yc_GetTokensSoapIn" />
+      <wsdl:output message="tns:yc_GetTokensSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetPhones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按pushModel取android关系</wsdl:documentation>
+      <wsdl:input message="tns:yc_GetPhonesSoapIn" />
+      <wsdl:output message="tns:yc_GetPhonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetUserByGuid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按guid取mobile_subs,t_yc_notification_user用户</wsdl:documentation>
+      <wsdl:input message="tns:yc_GetUserByGuidSoapIn" />
+      <wsdl:output message="tns:yc_GetUserByGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserNameAndPhone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 99团购记录用户名 手机&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:InsertUserNameAndPhoneSoapIn" />
+      <wsdl:output message="tns:InsertUserNameAndPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToCheckIOSPay">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; IOS支付&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ToCheckIOSPaySoapIn" />
+      <wsdl:output message="tns:ToCheckIOSPaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToCheckUdid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; IOS导量&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ToCheckUdidSoapIn" />
+      <wsdl:output message="tns:ToCheckUdidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewUserOrOldUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 判断新用户 还是 老用户  1是老用户,0是新用户x&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:NewUserOrOldUserSoapIn" />
+      <wsdl:output message="tns:NewUserOrOldUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Enddate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;取到期日&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Get_EnddateSoapIn" />
+      <wsdl:output message="tns:Get_EnddateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Exchange_mobile_loyalty_points">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;积分兑换使用期&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Exchange_mobile_loyalty_pointsSoapIn" />
+      <wsdl:output message="tns:Exchange_mobile_loyalty_pointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_login_forweixin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;验证软件号是否存在&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:User_login_forweixinSoapIn" />
+      <wsdl:output message="tns:User_login_forweixinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_login_forbaike">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;百科用户登录&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:User_login_forbaikeSoapIn" />
+      <wsdl:output message="tns:User_login_forbaikeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_exchangePeriod_baike">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;百科积分兑换使用期&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sp_exchangePeriod_baikeSoapIn" />
+      <wsdl:output message="tns:sp_exchangePeriod_baikeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_qry_mobile_loyalty_points_weixin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;微信积分查询&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sp_qry_mobile_loyalty_points_weixinSoapIn" />
+      <wsdl:output message="tns:sp_qry_mobile_loyalty_points_weixinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_add_mobile_referral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;微信推荐好友&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sp_add_mobile_referralSoapIn" />
+      <wsdl:output message="tns:sp_add_mobile_referralSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="mobilewbsSoap" type="tns:mobilewbsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBack">
+      <soap:operation soapAction="http://tempuri.org/InsertBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wb_HBYJ">
+      <soap:operation soapAction="http://tempuri.org/wb_HBYJ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wb_sp_VerifyUser_ForStockDiagnosis">
+      <soap:operation soapAction="http://tempuri.org/wb_sp_VerifyUser_ForStockDiagnosis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_VerifyUser_ForInvestigation_1210">
+      <soap:operation soapAction="http://tempuri.org/wd_sp_VerifyUser_ForInvestigation_1210" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_addRight_ForInvestigation_1210">
+      <soap:operation soapAction="http://tempuri.org/wd_sp_addRight_ForInvestigation_1210" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_regUser_lt">
+      <soap:operation soapAction="http://tempuri.org/sp_regUser_lt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInterface">
+      <soap:operation soapAction="http://tempuri.org/CheckInterface" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLM_UDID">
+      <soap:operation soapAction="http://tempuri.org/GetLM_UDID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToLM_udid">
+      <soap:operation soapAction="http://tempuri.org/ToLM_udid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Zctbjk">
+      <soap:operation soapAction="http://tempuri.org/wd_sp_Zctbjk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Xgmm">
+      <soap:operation soapAction="http://tempuri.org/wd_sp_Xgmm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Tcdgjk">
+      <soap:operation soapAction="http://tempuri.org/wd_sp_Tcdgjk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_order_bestTone_interface">
+      <soap:operation soapAction="http://tempuri.org/sp_order_bestTone_interface" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Tctdjk">
+      <soap:operation soapAction="http://tempuri.org/wd_sp_Tctdjk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryPassword">
+      <soap:operation soapAction="http://tempuri.org/QueryPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_qryOrderInfo_new">
+      <soap:operation soapAction="http://tempuri.org/sp_qryOrderInfo_new" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADW_add">
+      <soap:operation soapAction="http://tempuri.org/ADW_add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADW_GetList">
+      <soap:operation soapAction="http://tempuri.org/ADW_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADW_update">
+      <soap:operation soapAction="http://tempuri.org/ADW_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_ADD">
+      <soap:operation soapAction="http://tempuri.org/Dianru_ADD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_data">
+      <soap:operation soapAction="http://tempuri.org/Dianru_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_update">
+      <soap:operation soapAction="http://tempuri.org/Dianru_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YM_Add">
+      <soap:operation soapAction="http://tempuri.org/YM_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YM_data">
+      <soap:operation soapAction="http://tempuri.org/YM_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YM_update">
+      <soap:operation soapAction="http://tempuri.org/YM_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Doctor_AddUserPhone">
+      <soap:operation soapAction="http://tempuri.org/Doctor_AddUserPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFWM">
+      <soap:operation soapAction="http://tempuri.org/CheckFWM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="phone_bind_weibo">
+      <soap:operation soapAction="http://tempuri.org/phone_bind_weibo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yh_GetUserList">
+      <soap:operation soapAction="http://tempuri.org/Yh_GetUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yh_UpdateFlag">
+      <soap:operation soapAction="http://tempuri.org/Yh_UpdateFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yh_qryActiveDegree">
+      <soap:operation soapAction="http://tempuri.org/Yh_qryActiveDegree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yh_updateTransactionStatus">
+      <soap:operation soapAction="http://tempuri.org/Yh_updateTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yc_AddUser">
+      <soap:operation soapAction="http://tempuri.org/yc_AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetTokens">
+      <soap:operation soapAction="http://tempuri.org/yc_GetTokens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetPhones">
+      <soap:operation soapAction="http://tempuri.org/yc_GetPhones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetUserByGuid">
+      <soap:operation soapAction="http://tempuri.org/yc_GetUserByGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserNameAndPhone">
+      <soap:operation soapAction="http://tempuri.org/InsertUserNameAndPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToCheckIOSPay">
+      <soap:operation soapAction="http://tempuri.org/ToCheckIOSPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToCheckUdid">
+      <soap:operation soapAction="http://tempuri.org/ToCheckUdid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewUserOrOldUser">
+      <soap:operation soapAction="http://tempuri.org/NewUserOrOldUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Enddate">
+      <soap:operation soapAction="http://tempuri.org/Get_Enddate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exchange_mobile_loyalty_points">
+      <soap:operation soapAction="http://tempuri.org/Exchange_mobile_loyalty_points" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_login_forweixin">
+      <soap:operation soapAction="http://tempuri.org/User_login_forweixin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_login_forbaike">
+      <soap:operation soapAction="http://tempuri.org/User_login_forbaike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_exchangePeriod_baike">
+      <soap:operation soapAction="http://tempuri.org/sp_exchangePeriod_baike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_qry_mobile_loyalty_points_weixin">
+      <soap:operation soapAction="http://tempuri.org/sp_qry_mobile_loyalty_points_weixin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_add_mobile_referral">
+      <soap:operation soapAction="http://tempuri.org/sp_add_mobile_referral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="mobilewbsSoap12" type="tns:mobilewbsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBack">
+      <soap12:operation soapAction="http://tempuri.org/InsertBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wb_HBYJ">
+      <soap12:operation soapAction="http://tempuri.org/wb_HBYJ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wb_sp_VerifyUser_ForStockDiagnosis">
+      <soap12:operation soapAction="http://tempuri.org/wb_sp_VerifyUser_ForStockDiagnosis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_VerifyUser_ForInvestigation_1210">
+      <soap12:operation soapAction="http://tempuri.org/wd_sp_VerifyUser_ForInvestigation_1210" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_addRight_ForInvestigation_1210">
+      <soap12:operation soapAction="http://tempuri.org/wd_sp_addRight_ForInvestigation_1210" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_regUser_lt">
+      <soap12:operation soapAction="http://tempuri.org/sp_regUser_lt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInterface">
+      <soap12:operation soapAction="http://tempuri.org/CheckInterface" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLM_UDID">
+      <soap12:operation soapAction="http://tempuri.org/GetLM_UDID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToLM_udid">
+      <soap12:operation soapAction="http://tempuri.org/ToLM_udid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Zctbjk">
+      <soap12:operation soapAction="http://tempuri.org/wd_sp_Zctbjk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Xgmm">
+      <soap12:operation soapAction="http://tempuri.org/wd_sp_Xgmm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Tcdgjk">
+      <soap12:operation soapAction="http://tempuri.org/wd_sp_Tcdgjk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_order_bestTone_interface">
+      <soap12:operation soapAction="http://tempuri.org/sp_order_bestTone_interface" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wd_sp_Tctdjk">
+      <soap12:operation soapAction="http://tempuri.org/wd_sp_Tctdjk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryPassword">
+      <soap12:operation soapAction="http://tempuri.org/QueryPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_qryOrderInfo_new">
+      <soap12:operation soapAction="http://tempuri.org/sp_qryOrderInfo_new" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADW_add">
+      <soap12:operation soapAction="http://tempuri.org/ADW_add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADW_GetList">
+      <soap12:operation soapAction="http://tempuri.org/ADW_GetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADW_update">
+      <soap12:operation soapAction="http://tempuri.org/ADW_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_ADD">
+      <soap12:operation soapAction="http://tempuri.org/Dianru_ADD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_data">
+      <soap12:operation soapAction="http://tempuri.org/Dianru_data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dianru_update">
+      <soap12:operation soapAction="http://tempuri.org/Dianru_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YM_Add">
+      <soap12:operation soapAction="http://tempuri.org/YM_Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YM_data">
+      <soap12:operation soapAction="http://tempuri.org/YM_data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YM_update">
+      <soap12:operation soapAction="http://tempuri.org/YM_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Doctor_AddUserPhone">
+      <soap12:operation soapAction="http://tempuri.org/Doctor_AddUserPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFWM">
+      <soap12:operation soapAction="http://tempuri.org/CheckFWM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="phone_bind_weibo">
+      <soap12:operation soapAction="http://tempuri.org/phone_bind_weibo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yh_GetUserList">
+      <soap12:operation soapAction="http://tempuri.org/Yh_GetUserList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yh_UpdateFlag">
+      <soap12:operation soapAction="http://tempuri.org/Yh_UpdateFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yh_qryActiveDegree">
+      <soap12:operation soapAction="http://tempuri.org/Yh_qryActiveDegree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yh_updateTransactionStatus">
+      <soap12:operation soapAction="http://tempuri.org/Yh_updateTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yc_AddUser">
+      <soap12:operation soapAction="http://tempuri.org/yc_AddUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetTokens">
+      <soap12:operation soapAction="http://tempuri.org/yc_GetTokens" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetPhones">
+      <soap12:operation soapAction="http://tempuri.org/yc_GetPhones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yc_GetUserByGuid">
+      <soap12:operation soapAction="http://tempuri.org/yc_GetUserByGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserNameAndPhone">
+      <soap12:operation soapAction="http://tempuri.org/InsertUserNameAndPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToCheckIOSPay">
+      <soap12:operation soapAction="http://tempuri.org/ToCheckIOSPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToCheckUdid">
+      <soap12:operation soapAction="http://tempuri.org/ToCheckUdid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewUserOrOldUser">
+      <soap12:operation soapAction="http://tempuri.org/NewUserOrOldUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Enddate">
+      <soap12:operation soapAction="http://tempuri.org/Get_Enddate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exchange_mobile_loyalty_points">
+      <soap12:operation soapAction="http://tempuri.org/Exchange_mobile_loyalty_points" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_login_forweixin">
+      <soap12:operation soapAction="http://tempuri.org/User_login_forweixin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_login_forbaike">
+      <soap12:operation soapAction="http://tempuri.org/User_login_forbaike" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_exchangePeriod_baike">
+      <soap12:operation soapAction="http://tempuri.org/sp_exchangePeriod_baike" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_qry_mobile_loyalty_points_weixin">
+      <soap12:operation soapAction="http://tempuri.org/sp_qry_mobile_loyalty_points_weixin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_add_mobile_referral">
+      <soap12:operation soapAction="http://tempuri.org/sp_add_mobile_referral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="mobilewbs">
+    <wsdl:port name="mobilewbsSoap" binding="tns:mobilewbsSoap">
+      <soap:address location="http://m.emoney.cn/mobilewbs/mobilewbs.asmx" />
+    </wsdl:port>
+    <wsdl:port name="mobilewbsSoap12" binding="tns:mobilewbsSoap12">
+      <soap12:address location="http://m.emoney.cn/mobilewbs/mobilewbs.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

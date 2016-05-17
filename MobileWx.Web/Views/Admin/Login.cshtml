@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="~/Content/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        function login() {
+            $.ajax({
+                type: "POST",
+                data: {
+                    login: $("#username").val(),
+                    password: $("#password").val()
+                },
+                success: function (data) {
+                    if (data == "success") {
+                        location.href = "@Url.Action("Index")";
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div style="width: 300px; vertical-align: middle; min-height: 600px; padding-top: 24px; padding-bottom: 24px; margin:auto;">
+        用户名:<input id="username" /><br /><br />
+        密　码:<input id="password" type="password" /><br /><br />
+        <input type="button" value="登录" onclick="login()" />
+    </div>
+</body>
+</html>

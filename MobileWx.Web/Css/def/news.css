@@ -1,0 +1,26 @@
+﻿html,body{ padding:3; margin:0; border:0;color: #333333;font-family:"微软雅黑"; background-color:#f8f7f5; }
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;color:#333333; text-align:center;}
+a,a:link,a:active{text-decoration:none;color:#0000FF;}
+a,a:visited{color:#aaa;text-decoration:none;}
+a,a:hover,a:focus{color:#FFA800;text-decoration:none;}
+
+#header {
+    padding-top:5px;
+}
+#header h3{font-size:20px;margin:0;text-shadow: 1px 1px #CCCCCC;font-weight:bold;text-align:left;  padding:3px 0px 1px 5px;
+           }
+#header h4{text-align:left; color:#808080 ;font-size:16px; margin:0;padding:1px 0px 1px 5px;}
+#img{
+    height:160px;width:320px; background-repeat:no-repeat; background-size:contain; background-position:center center;
+}
+#footer{ margin-top:10px; text-align: center;  margin-bottom:20px; }
+#footer span
+    {
+        background-color:#353535;
+        padding: 5px 10px 5px 10px;
+        border: 1px solid #646464;
+        border-radius: 5px;
+        margin-bottom:20px;
+        color:#ffffff;
+    }
+#footer a.phoneNum{color:#ff8000; font-weight: normal;text-decoration:none;}

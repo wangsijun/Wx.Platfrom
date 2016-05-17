@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "到期日查询";
+    ViewBag.css = @Url.Content("~/Css/def/style_new.css");
+    Layout = "~/Views/Shared/_LayoutYwcx.cshtml";
+}
+
+<script type="text/javascript">
+
+    function clearText(field) {
+
+        if (field.defaultValue == field.value) {
+            field.value = '';
+        }
+        else if (field.value == '') {
+            field.value = field.defaultValue;
+        }
+
+    }
+
+    function clearText2(field) {
+        if (field.defaultValue == '') {
+            document.getElementById("mima").style.background = "url(images/white.png)";
+        }
+        else if (field.value == field.value) {
+            document.getElementById("mima").style.background = "url(images/mima.png)";
+        }
+    }
+
+
+    function psw(el) {
+        if (el.value == '请输入密码') {
+            el.value = '';
+            el.type = 'password';
+        }
+    }
+    function txt(el) {
+        if (!el.value) {
+            el.type = 'text';
+            el.value = '请输入密码';
+        }
+    }
+
+</script>
+
+
+
+<body>
+    <div class="login">
+        <div class="detail">
+            请先登录您的操盘手账号
+        </div>
+        @using (Html.BeginForm("Stock", "Ywcx", FormMethod.Post))
+        {
+            <div>
+                <input id="phone" type="text" value="请输入手机号" class="txt" name="txt_name" maxlength="11" onfocus="clearText(this)" onblur="clearText(this)" />
+
+            </div>           
+
+            <div>
+                <input id="mima" type="text" value="请输入密码" class="txt2" name="txt_pwd" maxlength="6" onfocus="psw(this)" onblur="txt(this) " />
+
+            </div>
+            <p class="lg_rt">
+                <a href="sms:106909990909" target="_blank">立即注册</a>&nbsp;&nbsp;<a href="sms:106695887109" target="_blank">忘记密码</a>
+
+            </p>
+            <div class="check">
+                <input type="submit" value="登 录" name="action" class="btn" />
+            </div>
+        }
+    </div>
+</body>
+

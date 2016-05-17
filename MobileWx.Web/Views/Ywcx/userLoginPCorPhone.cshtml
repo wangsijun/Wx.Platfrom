@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "软件登录选择";
+    ViewBag.css = @Url.Content("~/Css/def/login.css");
+    Layout = "~/Views/Shared/_LayoutYwcx.cshtml";
+}
+<body id="login_body">
+
+    <div class="rgba_back">
+    </div>
+    <div id="login">
+        <div class="popwin" id="popwin">
+            <div class="pwinset">
+                <p class="pop_p">
+                    为了您方便充值，请选择您的用户类型！
+                </p>
+                <section>
+                    <div class="ln">
+
+                        <table>
+                            <tr>
+                                <td rowspan="2" id="td_lf">
+                                    <img src="../Css/def/images/phone1.png" /></td>
+                                <td><a href="@Url.Content("recharge?id=1")">手机版用户</a></td>
+                            </tr>
+                            <tr>
+                                <td><font style="font-size: small; color: #808080;">(未购买过电脑版)</font></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                </section>
+
+                <section>
+                    <div class="ln">
+
+                        <table>
+                            <tr>
+                                <td id="td_lf">
+                                    <img src="../Css/def/images/pc.png" /></td>
+                                <td><a href="@Url.Content("userLoginPC")">电脑版用户</a></td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+
+
+                </section>
+
+                <div class="close" onclick=" location.assign('login');">×</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+

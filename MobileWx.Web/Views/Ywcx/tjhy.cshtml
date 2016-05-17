@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "推荐好友";
+    ViewBag.css = @Url.Content("~/Css/def/style_new.css");
+    Layout = "~/Views/Shared/_LayoutYwcx.cshtml";
+}
+<body>
+    <a href="@Url.Content("~/Ywcx/tjhy2")">
+        <div class="main">
+            <p class="p_1">好软件要分享，现在就去告诉Ta</p>
+            <p class="p_2">@ViewBag.quote </p>
+            <p class="p_ts">
+                <img src="../Css/def/images/tjhy.png" />
+            </p>
+            <p class="p_4">
+                推荐好友越多，积分送的越多。
+           
+            </p>
+            <p class="p_5"></p>
+            <div class="div_6">
+
+                <ul>
+                    <li class="first">阅读全文</li>
+                    <li>
+
+                        <img src="../Css/def/images/gd.png" /></li>
+                </ul>
+
+            </div>
+        </div>
+    </a>
+</body>
+

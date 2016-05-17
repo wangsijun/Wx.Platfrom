@@ -1,0 +1,535 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+
+.main {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: solid 1px #808080;
+    border-radius: 10px;
+    background-color: rgb(235,235,235);
+    -moz-box-shadow: 1px 1px 5px #909090; /*firefox*/
+    -webkit-box-shadow: 1px 1px 5px #909090; /*safari或chrome*/
+    box-shadow: 1px 1px 5px #909090; /*opera或ie9*/
+}
+
+.p_1 {
+    margin-top: 30px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.p_2 {
+    margin-top: 5px;
+    padding-left: 12px;
+    color: rgb(105,105,105);
+}
+
+.p_3 {
+    width: 94%;
+    margin-top: 20px;
+    margin-left: 3%;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    background-color: rgb(4,97,174);
+}
+
+    .p_3 img {
+        margin-top: 57px;
+    }
+
+.p_4 {
+    margin-top: 35px;
+    margin-bottom: 25px;
+    padding-left: 12px;
+    color: rgb(105,105,105);
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+
+
+.p_5 {
+    width: 96%;
+    height: 5px;
+    margin-left: 2%;
+    background: url(images/01-bod.jpg) repeat-x bottom;
+}
+
+.div_6 {
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+    .div_6 .first {
+        padding-left: 12px;
+        font-size: 16px;
+        float: left;
+    }
+
+    .div_6 ul {
+        list-style: none;
+    }
+
+        .div_6 ul li {
+            float: right;
+            line-height: 40px;
+        }
+
+    .div_6 img {
+        margin-right: 10px;
+        margin-top: 10px;
+        border: none;
+    }
+
+
+a, a:active, a:hover {
+    color: black;
+    outline: none;
+    text-decoration: none;
+}
+
+    a:focus {
+        color: black;
+        text-decoration: none;
+    }
+
+    a, a:link {
+        color: black;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+/*----------------------login---------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    /*panel common*/
+    width: 100%;
+    background: #FFF;
+    font-size: 18px;
+    color: #000;
+}
+
+    .login div {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 20px;
+    }
+
+    .login .detail {
+        font-family: "微软雅黑";
+        height: 40px;
+        line-height: 40px;
+        vertical-align: middle;
+    }
+
+    .login .txt {
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+        border-radius: 10px;
+        padding-left: 5px;
+        vertical-align: middle;
+    }
+
+
+    .login .txt2 {
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+        border-radius: 10px;
+        padding-left: 5px;
+        vertical-align: middle;
+
+
+    }
+.txt2 {
+        /*background:url(images/mima.png);
+        background-repeat:no-repeat;
+        background-position-x:4px;
+        background-position-y:center;*/
+}
+
+    .login .lg_rt {
+        width: 90%;
+        padding-right: 20px;
+        padding-top: 10px;
+        text-align: right;
+    }
+
+    .login .btn {
+        width: 100%;
+        height: 55px;
+        line-height: 55px;
+        background: url(images/tj_new_back.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .login .check {
+        width: 80%;
+        height: 55px;
+        margin-left: 10%;
+    }
+
+    .login a {
+        text-decoration: underline;
+    }
+
+
+/*gnjs_2_1*/
+.header table {
+    /*background-color: rgb(232,232,232);*/
+    background: url(images/backimg.png);
+    background-repeat: repeat-x;
+}
+
+    .header table td {
+        width: 25%;
+        height: 40px;
+        text-align: center;
+        line-height: 35px;
+        font-weight: bold;
+        font-family: "微软雅黑";
+    }
+
+.header a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+/*.header a:active, .header a:hover {
+        text-decoration: none;
+    }
+
+    .header a:visited {
+        background: url(images/back4080.png);
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 2px;
+        text-decoration: none;
+    }*/
+/*.header a:link {
+        text-decoration: none;
+    }
+
+
+
+   .header a:visited, .header a:hover ,.header a:active {
+        background-image: url(images/back4080.png);
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 2px;
+        text-decoration: none;
+    }*/
+.header td {
+    line-height: 20px;
+}
+
+    .header td span {
+        display: inline-block;
+        margin-bottom: 15px;
+        height: 30px;
+        line-height: 20px;
+    }
+
+.a_link {
+    background: url(images/back4080.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 2px;
+    text-decoration: none;
+    color:white;
+}
+
+
+.content img {
+    width: 100%;
+    margin-top: -17px;
+}
+
+/*实战技巧*/
+.szjq {
+    width: 96%;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    margin-left: 2%;
+    background-color: white;
+    border: solid 1px rgb(232,232,232);
+    border-radius: 8px;
+}
+
+    .szjq ul li {
+        list-style: none;
+    }
+
+    .szjq ul .li_1 {
+        height: 40px;
+        line-height: 40px;
+        font-weight: bold;
+        font-size: larger;
+        padding-left: 20px;
+        background: url(images/back_red.png);
+        background-repeat: repeat-x;
+        background-position-y: bottom;
+    }
+
+    .szjq ul .li_2 {
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-right: 20px;
+        letter-spacing: 2px;
+        line-height: 20px;
+        font-size: small;
+        color: rgb(87, 85, 85);
+    }
+
+    .szjq ul .li_3 {
+        text-align: right;
+        padding-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .szjq ul a {
+        font-size: smaller;
+        color: #909090;
+    }
+
+/*推荐好友*/
+.main .p_ts {
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 20px;
+}
+
+    .main .p_ts img {
+        width: 100%;
+        border: none;
+    }
+
+
+
+
+
+.tjhy .p2, .tjhy .p5 {
+    color: black;
+    margin-left: 20px;
+    width: 90%;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
+
+.tjhy .p3, .tjhy .p6 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 40px;
+}
+
+    .tjhy .p3 .txt, .tjhy .p6 .txt {
+        width: 88%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        border-radius: 10px;
+        margin-left: 5%;
+        padding-left: 5px;
+    }
+
+
+
+.tjhy3 .p1 {
+    margin-left: 20px;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+
+.tjhy3 .p2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+    .tjhy3 .p2 img {
+        border: none;
+    }
+
+/*意见反馈*/
+
+.yjfk .top {
+    height: 32px;
+    line-height: 32px;
+    padding-left: 20px;
+    background: url(images/yjfk_top.png);
+    background-repeat: repeat-x;
+    background-position-y: bottom;
+    font-size: small;
+}
+
+.yjfk .p1 {
+    height: 41px;
+    line-height: 41px;
+    padding-left: 5px;
+    background: url(images/yjback.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: center;
+    color: white;
+}
+
+/*推荐好友和意见反馈 左边黄色标题背景样式*/
+/**/
+.yjfk .p2, .tjhy .p1, .tjhy .p4 {
+    height: 41px;
+    line-height: 41px;
+    padding-left: 5px;
+    background: url(images/150.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: center;
+    color: white;
+}
+/**/
+
+.yjfk .type {
+    width: 90%;
+    height: 100px;
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: solid 1px rgb(232,232,232);
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px #909090;
+}
+
+    .yjfk .type li {
+        margin: 0;
+        padding: 0;
+        width: 33%;
+        list-style: none;
+        float: left;
+        letter-spacing: 4px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+.yjfk .yj {
+    width: 90%;
+    height: 100px;
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: solid 1px rgb(232,232,232);
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px #909090;
+}
+
+    .yjfk .yj .txt {
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 95%;
+        height: 90px;
+        border: none;
+        font-size: 16px;
+    }
+
+.yjfk .lx {
+    width: 90%;
+    height: 40px;
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: solid 1px rgb(232,232,232);
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px #909090;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+    .yjfk .lx .txt {
+        width: 100%;
+        height: 38px;
+        padding-left: 10px;
+        border: 0;
+        font-size: 16px;
+        color: #909090;
+    }
+
+
+.yjfk .check, .tjhy .p7 {
+    width: 100%;
+    height: 65px;
+    line-height: 65px;
+    margin-bottom: 10px;
+}
+
+    .yjfk .check .btn, .tjhy .p7 .btn {
+        width: 100%;
+        height: 65px;
+        line-height: 65px;
+        background: url(images/tj_new_back.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+    }
+
+
+/*回到顶部*/
+#returnTop {
+    display: none;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    line-height: 30px;
+    background-color: rgb(255,111,62);
+}
+
+    #returnTop img {
+        vertical-align: middle;
+    }
+
+    #returnTop a {
+        color: white;
+        display: inline-block;
+        height: 30px;
+    }
+
+
+.showhide1, .showhide2, .showhide3 {
+    display: none;
+}

@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "充值";
+    ViewBag.css = @Url.Content("~/Css/def/em.wx.css");
+    ViewBag.css2 = @Url.Content("~/Css/def/mobcss.css");
+
+    ViewBag.js = @Url.Content("~/Js/jquery.min.js");
+    //ViewBag.js2 = @Url.Content("~/Js/recharge.js");
+    Layout = "~/Views/Shared/_LayoutYwcx.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".header li").click(function () {
+            $(".header li").css("color", "black");
+            var indexId = $(this).index();
+            if (indexId != 0) {
+                $("#img4").attr("src", "../Css/def/images/cz_header_" + indexId + ".png");
+            }
+
+            if (indexId == 0) {
+            }
+            else if (indexId == 1) {
+                $(".header #li_1").css("color", "white");
+                $(".header #li_1").css("background", "url(../Css/def/images/cz_01.png)");
+                $(".header #li_2").css("background", "url(../Css/def/images/cz_022.png)");
+                $(".header #li_3").css("background", "url(../Css/def/images/cz_033.png)");
+                addCSS();
+            }
+            else if (indexId == 2) {
+
+                $(".header #li_2").css("color", "white");
+                $(".header #li_2").css("background", "url(../Css/def/images/cz_02.png)");
+                $(".header #li_1").css("background", "url(../Css/def/images/cz_011.png)");
+                $(".header #li_3").css("background", "url(../Css/def/images/cz_033.png)");
+                addCSS();
+
+
+
+
+            }
+            else {
+                $(".header #li_3").css("color", "white");
+                $(".header #li_3").css("background", "url(../Css/def/images/cz_03.png)");
+                $(".header #li_2").css("background", "url(../Css/def/images/cz_022.png)");
+                $(".header #li_1").css("background", "url(../Css/def/images/cz_011.png)");
+                addCSS();
+
+            }
+
+        });
+
+
+        function addCSS() {
+            $(".header #li_1").css("background-position-x", "center");
+            $(".header #li_1").css("background-position-y", "top");
+            $(".header #li_1").css("background-repeat", "no-repeat");
+            $(".header #li_1").css("background-size", "60px");
+            $(".header #li_2").css("background-position-x", "center");
+            $(".header #li_2").css("background-position-y", "top");
+            $(".header #li_2").css("background-repeat", "no-repeat");
+            $(".header #li_2").css("background-size", "60px");
+            $(".header #li_3").css("background-position-x", "center");
+            $(".header #li_3").css("background-position-y", "top");
+            $(".header #li_3").css("background-repeat", "no-repeat");
+            $(".header #li_3").css("background-size", "60px");
+        }
+
+
+    }
+)</script>
+
+
+
+<body id="bg">
+    <div class="top">
+        特色介绍
+     
+    </div>
+
+    <div class="raised">
+
+        <div class="header">
+            <ul>
+                <li>
+                    <p>
+                        手机<br />
+                        主力版
+                    </p>
+                </li>
+                <li id="li_1">判大势
+                </li>
+                <li id="li_2">选好股
+                </li>
+                <li id="li_3">稳操作
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="detail">
+            <br />
+            <img id="img4" src="../Css/def/images/cz_header_1.png" />
+        </div>
+        <br />
+
+
+    </div>
+
+    <div class="product">
+        产品选择
+    </div>
+
+    <div class="raisedDown">
+
+        <section class="ProList">
+            <dl>
+                <dt><span class="titpro">
+                    @Html.Raw(@ViewBag.listStr)
+                </span><span class="morepro"><a id="showMorepro">更多产品
+                    <img src="@Url.Content("~/Css/def/images/parrow.png")" class="parrow" alt="" /></a></span></dt>
+                <dd id="showProList">
+                    <ul>
+                        @Html.Raw(@ViewBag.listStr2)
+                    </ul>
+                    <div class="clr"></div>
+                </dd>
+            </dl>
+        </section>
+
+
+    </div>
+    <br />
+    <br />
+    <script>
+        var proItem = $(".ProList dl .proitem");
+        proItem.mouseover(function () {
+            proItem.removeClass("sel");
+            $(this).toggleClass("sel");
+
+        });
+        $("#showMorepro").click(function () {
+            $(this).toggleClass("sel");
+            $("#showProList").toggle();
+
+            if ($(this).hasClass("sel")) {
+                $("img", this).attr("src", "@Url.Content("~/Css/def/images/parrow0.png")");
+            } else {
+                $("img", this).attr("src", "@Url.Content("~/Css/def/images/parrow.png")");
+            }
+        });
+
+    </script>
+</body>

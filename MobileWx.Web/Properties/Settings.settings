@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MobileWx.Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MobileWx_Web_mobilewbs_mobilewbs" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://m.emoney.cn/mobilewbs/mobilewbs.asmx</Value>
+    </Setting>
+    <Setting Name="MobileWx_Web_mobilePay_mobilePay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://m.emoney.cn/mobilewbs/mobilePay.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

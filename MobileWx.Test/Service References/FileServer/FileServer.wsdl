@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FileServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IFileServer_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9224/FileServer?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9224/FileServer?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFileServer_SyncFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_SyncFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_CreateFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_CreateFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_CreateBinaryFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBinaryFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_CreateBinaryFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBinaryFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_FileCopy_InputMessage">
+    <wsdl:part name="parameters" element="tns:FileCopy" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_FileCopy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FileCopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_BinaryFileCopy_InputMessage">
+    <wsdl:part name="parameters" element="tns:BinaryFileCopy" />
+  </wsdl:message>
+  <wsdl:message name="IFileServer_BinaryFileCopy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BinaryFileCopyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFileServer">
+    <wsdl:operation name="SyncFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileServer/SyncFile" message="tns:IFileServer_SyncFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileServer/SyncFileResponse" message="tns:IFileServer_SyncFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileServer/CreateFile" message="tns:IFileServer_CreateFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileServer/CreateFileResponse" message="tns:IFileServer_CreateFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBinaryFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileServer/CreateBinaryFile" message="tns:IFileServer_CreateBinaryFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileServer/CreateBinaryFileResponse" message="tns:IFileServer_CreateBinaryFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FileCopy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileServer/FileCopy" message="tns:IFileServer_FileCopy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileServer/FileCopyResponse" message="tns:IFileServer_FileCopy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BinaryFileCopy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileServer/BinaryFileCopy" message="tns:IFileServer_BinaryFileCopy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileServer/BinaryFileCopyResponse" message="tns:IFileServer_BinaryFileCopy_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IFileServer" type="tns:IFileServer">
+    <wsp:PolicyReference URI="#NetTcpBinding_IFileServer_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SyncFile">
+      <soap12:operation soapAction="http://tempuri.org/IFileServer/SyncFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFile">
+      <soap12:operation soapAction="http://tempuri.org/IFileServer/CreateFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBinaryFile">
+      <soap12:operation soapAction="http://tempuri.org/IFileServer/CreateBinaryFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileCopy">
+      <soap12:operation soapAction="http://tempuri.org/IFileServer/FileCopy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinaryFileCopy">
+      <soap12:operation soapAction="http://tempuri.org/IFileServer/BinaryFileCopy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileServer">
+    <wsdl:port name="NetTcpBinding_IFileServer" binding="tns:NetTcpBinding_IFileServer">
+      <soap12:address location="net.tcp://localhost:9225/FileServer" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9225/FileServer</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

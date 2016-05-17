@@ -1,0 +1,144 @@
+﻿@{
+    Layout = "~/Views/shared/_Message.cshtml";
+}
+
+@section head{
+    <script type="text/javascript">
+
+        function list_delete() {
+            var selectedrows = $("#list").datagrid("getSelections");
+            if (selectedrows.length == 0) {
+                $.messager.alert("删除失败", "请选择一个稿件", "info");
+                return;
+            }
+            $.messager.confirm("确定要删除?", "确定要删除这些稿件吗？", function (r) {
+                if (r) {
+                    var ids = [];
+                    for (var i = 0; i < selectedrows.length; i++) {
+                        ids.push(selectedrows[i].Id);
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Content("~/Admin/DeleteMessage")",
+                        data: { ids: ids },
+                        success: function (data, textStatus, jqXHR) {
+                            if (parseInt(data) >= 0) {
+                                $.messager.alert("删除成功", "已成功删除" + data + "个稿件", "info");
+                                list_reload();
+                            }
+                        }
+                    });
+                }
+            })
+        }
+
+        top.jlcj_reload = list_reload;
+        function list_reload() {
+            var options = $("#list_pager").pagination("options");
+            list_load(options.pageNumber, options.pageSize);
+        }
+
+        function list_load(pageNumber, pageSize) {
+            if (top.addmsg) {
+                top.addmsg("MessageList_load");
+            }
+            $.ajax({
+                type: "POST",
+                url: "@Url.Content("~/Admin/MessageListData")",
+                data: { page: pageNumber, pagesize: pageSize, msgtype: "@(MobileWx.Model.MessageTypeEnum.Jlcjgng)" },
+                success: function (data) {
+                    if (typeof (data.status) == "undefined") {
+                        eval("data=" + data);
+                    }
+                    if (data.status == 0) {
+                        $("#list_pager").pagination({
+                            total: data.data.itemcount
+                        });
+                        $("#list").datagrid("loadData", data.data.datalist);
+                        $("#list").data("data", data.data.datalist);
+                    }
+                },
+                error: function (req, status, err) {
+                    alert(err);
+                }
+            });
+        }
+
+        $("#list_pager").pagination({
+            total: 1,
+            pageSize: 20,
+            onSelectPage: function (pageNumber, pageSize) {
+                list_load(pageNumber, pageSize);
+            }
+        });
+
+        function list_add() {
+            top.opendialog({
+                title: '春节研报红包',
+                width: 800,
+                height: 600,
+                closed: false,
+                cache: false,
+                modal: true,
+                content: "<iframe scrolling=\"no\" frameborder=\"0\"  src=\"@Url.Content("~/Admin/Edit?msgtype=Jlcjgng")\" style=\"width:95%;height:100%;\"></iframe>"
+            });
+        }
+        function document_dblclick(rowIndex, rowData) {
+            top.opendialog({
+                title: '接力柴静概念股的是谁？',
+                width: 800,
+                height: 600,
+                closed: false,
+                cache: false,
+                modal: true,
+                content: "<iframe scrolling=\"no\" frameborder=\"0\"  src=\"@Url.Content("~/Admin/Edit/")" + rowData.Id + "?msgtype=Jlcjgng\" style=\"width:95%;height:100%;\"></iframe>"
+            });
+        }
+
+        $(function () {
+
+            $("#list_pager").pagination({
+                total: 1,
+                pageSize: 20,
+                onSelectPage: function (pageNumber, pageSize) {
+                    list_load(pageNumber, pageSize);
+                }
+            });
+
+            $("#list").datagrid({
+                ctrlSelect: true,
+                fit: true,
+                border: false,
+                onDblClickRow: document_dblclick,
+                columns: [[
+                      { field: 'Index', title: '序号', fixed: true, width: 40, align: "center" },
+                      {
+                          field: 'PicName', title: '图片', fixed: true, width: 200, align: "left", formatter: function (value, row, index) {
+                              return "<img style=\"height:50px;\" src=\"@Url.Content("~/Content/docimage/")" + value + "\" />"
+                          }
+                      },
+                      { field: 'Title', title: '标题', width: 200, fixed: false, align: "left", formatter: encodeformatter },
+                      { field: 'CreateTime', title: '创建时间', fixed: false, width: 150, align: "left" }
+                ]]
+            });
+            list_load(1, 20);
+        });
+    </script>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',split:false" style="height: 35px; overflow: hidden;">
+        <div class="easyui-panel" style="padding: 2px 0px 2px 0px;" data-options="border:false">
+            <a class="easyui-linkbutton" title="" data-options="plain:true,iconCls:'icon-add'" onclick="list_add()">新建稿件</a>
+            <a class="easyui-linkbutton" title="" data-options="plain:true,iconCls:'icon-remove'" onclick="list_delete()">删除</a>
+            <span class="icon-splitter">&nbsp;</span>
+            <a class="easyui-linkbutton" title="" data-options="plain:true,iconCls:'icon-reload'" onclick="list_reload()">刷新</a>
+            <span class="icon-splitter">&nbsp;</span>
+        </div>
+    </div>
+    <div data-options="region:'center'">
+        <table id="list" style="width: 100%;"></table>
+    </div>
+    <div data-options="region:'south'" style="height: 35px;">
+        <div id="list_pager" class="easyui-pagination"></div>
+    </div>
+</div>

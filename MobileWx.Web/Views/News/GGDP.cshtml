@@ -1,0 +1,22 @@
+﻿@using MobileWx.Model;
+@using MobileWx.Bll;
+@{
+    Layout = "~/Views/Shared/_LayoutNews.cshtml";
+    //ViewBag.Title = "领涨板块及个股点评";
+    ModelNewsTab obj = Model;
+}
+<div id="header">
+        <h3>@obj.title</h3>
+        <h4>@obj.createDate</h4>
+    </div>
+    <div id="body">
+         @*http://180.96.21.230:8889/WXBKTIMESHARE/TIMESHARE_2001003.PNG*@
+         @{
+             if(!string.IsNullOrEmpty(obj.corSymbol))
+             {
+                 <img src="http://180.96.21.230:8889/WXBKTIMESHARE/TIMESHARE_200@(obj.corSymbol).PNG" style="width:320px" />
+             }
+          }
+         18516556129
+        <div> @(new HtmlString(BllBase.FilterContent(obj.content)))</div>
+    </div>

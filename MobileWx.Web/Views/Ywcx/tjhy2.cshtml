@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "推荐好友";
+    ViewBag.css = @Url.Content("~/Css/def/style_new.css");
+    Layout = "~/Views/Shared/_LayoutYwcx.cshtml";
+}
+
+
+<body>
+    <div class="tjhy">
+        @using (Html.BeginForm("StockPhone", "Ywcx", FormMethod.Post))
+        {
+            <p class="p1">
+                ①好友手机号
+
+            </p>
+
+            <div class="p2">
+                我们严格保密您的好友信息，请放心填
+
+            </div>
+            <p class="p3">
+
+                <input type="text" class="txt" name="txt_phoneNew" maxlength="11" />
+
+            </p>
+
+            <p class="p4">
+                ②您的手机号
+            </p>
+            <div class="p5">
+                推荐好友可获得10--180积分，为了方便给予您奖励，请填写您的信息
+
+            </div>
+            <p class="p6">
+
+                <input type="text" class="txt" name="txt_phoneOld" maxlength="11" />
+            </p>
+            <div class="p7">
+                <center><input type="submit" value="提  交" name="action" class="btn" /></center>
+            </div>
+        }
+    </div>
+</body>
+

@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "到期日查询";
+    ViewBag.css = @Url.Content("~/Css/def/em.wx.css");
+    Layout = "~/Views/Shared/_LayoutYwcx.cshtml";
+}
+
+
+<body>
+
+    <div class="dqr_new">
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td colspan="2" style="border-bottom: 1px dashed #808080;">
+                        <ul>
+                            <li class="first">
+                                @ViewBag.cpnumber
+                            </li>
+                            <li class="second">用户，您好！
+                            </li>
+                        </ul>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_rt">
+                        <img id="img1" src="@Url.Content("~/Css/def/images/zhuli_small.png")" />
+                        &nbsp;  &nbsp;</td>
+                    <td><font style="color: #808080;">使用到期日</font>
+                        <br />
+                        &nbsp;&nbsp;&nbsp;
+                                <font style="font-size: larger; letter-spacing:1px;">
+                                @ViewBag.quote1
+                                    </font>
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="td_rt" id="first" colspan="2">&nbsp;</td>
+
+                </tr>
+                <tr>
+                    <td class="td_rt">
+                        <img id="img2" src="@Url.Content("~/Css/def/images/jueceban_small.png")" />
+                        &nbsp;  &nbsp;
+                    </td>
+                    <td><font style="color: #808080;">使用到期日</font>
+                        <br />
+                        &nbsp;&nbsp;&nbsp;
+                                <font style="font-size: larger;letter-spacing:1px;">
+                                @ViewBag.quote2
+                                    </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="td_bottom" style="border-top: 1px dashed #808080;">
+                
+
+                        <ul>
+                            <li class="first1">
+                                <a href="tel:400-640-8886">如果延长使用期拨打：400-640-8886</a>
+                            </li>
+                        </ul>
+
+                    </td>
+
+
+                </tr>
+
+            </table>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <br />
+    <br />
+    <div id="bq_enddate">
+        益盟操盘手 创建于2002年<br />
+        2013 益盟操盘手 版权所有<br />
+        ICP许可证号 粤B2-20040497
+    </div>
+</body>
+
+
+

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CFT_pay_99">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="businessesID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="payType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="personID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CFT_pay_99Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CFT_pay_99Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CFT_pay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="businessesID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="payType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="personID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CFT_payResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CFT_payResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_PhoneNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_PhoneNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_PhoneNumResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CFT_updateOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payOrderID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="payStatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CFT_updateOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CFT_updateOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone_Num" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="versionFlag" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductList_Comm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone_Num" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flag" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductList_CommResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductList_CommResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddInvoiceInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber_ass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceHead" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddInvoiceInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddInvoiceInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyPCUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PC_UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PC_UserPasswd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyPCUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyPCUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CFT_pay_99SoapIn">
+    <wsdl:part name="parameters" element="tns:CFT_pay_99" />
+  </wsdl:message>
+  <wsdl:message name="CFT_pay_99SoapOut">
+    <wsdl:part name="parameters" element="tns:CFT_pay_99Response" />
+  </wsdl:message>
+  <wsdl:message name="CFT_paySoapIn">
+    <wsdl:part name="parameters" element="tns:CFT_pay" />
+  </wsdl:message>
+  <wsdl:message name="CFT_paySoapOut">
+    <wsdl:part name="parameters" element="tns:CFT_payResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_PhoneNumSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_PhoneNum" />
+  </wsdl:message>
+  <wsdl:message name="Get_PhoneNumSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_PhoneNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="CFT_updateOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CFT_updateOrder" />
+  </wsdl:message>
+  <wsdl:message name="CFT_updateOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CFT_updateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderList" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductList" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductList_CommSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductList_Comm" />
+  </wsdl:message>
+  <wsdl:message name="GetProductList_CommSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductList_CommResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddInvoiceInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddInvoiceInfo" />
+  </wsdl:message>
+  <wsdl:message name="AddInvoiceInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddInvoiceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPCUserSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyPCUser" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPCUserSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyPCUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="mobilePaySoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CFT_pay_99">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 生成订单 payType int,--支付类型(财付通:1,支付宝:2) &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CFT_pay_99SoapIn" />
+      <wsdl:output message="tns:CFT_pay_99SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CFT_pay">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 生成订单 payType int,--支付类型(财付通:1,支付宝:2) &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CFT_paySoapIn" />
+      <wsdl:output message="tns:CFT_paySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_PhoneNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 获取密文手机号码&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Get_PhoneNumSoapIn" />
+      <wsdl:output message="tns:Get_PhoneNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CFT_updateOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 支付之后修改订单状态 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CFT_updateOrderSoapIn" />
+      <wsdl:output message="tns:CFT_updateOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 获取订单列表 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderListSoapIn" />
+      <wsdl:output message="tns:GetOrderListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 返回某条订单的信息 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderDetailSoapIn" />
+      <wsdl:output message="tns:GetOrderDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 返回产品列表 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetProductListSoapIn" />
+      <wsdl:output message="tns:GetProductListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList_Comm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 返回产品列表  一财 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetProductList_CommSoapIn" />
+      <wsdl:output message="tns:GetProductList_CommSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoiceInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 添加索要发票信息 &lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:AddInvoiceInfoSoapIn" />
+      <wsdl:output message="tns:AddInvoiceInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPCUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt; 验证PC用户 小于 0验证失败, 大于等于 0 成功&lt;/h3&gt;</wsdl:documentation>
+      <wsdl:input message="tns:VerifyPCUserSoapIn" />
+      <wsdl:output message="tns:VerifyPCUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="mobilePaySoap" type="tns:mobilePaySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CFT_pay_99">
+      <soap:operation soapAction="http://tempuri.org/CFT_pay_99" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CFT_pay">
+      <soap:operation soapAction="http://tempuri.org/CFT_pay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_PhoneNum">
+      <soap:operation soapAction="http://tempuri.org/Get_PhoneNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CFT_updateOrder">
+      <soap:operation soapAction="http://tempuri.org/CFT_updateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderList">
+      <soap:operation soapAction="http://tempuri.org/GetOrderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/GetOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <soap:operation soapAction="http://tempuri.org/GetProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList_Comm">
+      <soap:operation soapAction="http://tempuri.org/GetProductList_Comm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoiceInfo">
+      <soap:operation soapAction="http://tempuri.org/AddInvoiceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPCUser">
+      <soap:operation soapAction="http://tempuri.org/VerifyPCUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="mobilePaySoap12" type="tns:mobilePaySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CFT_pay_99">
+      <soap12:operation soapAction="http://tempuri.org/CFT_pay_99" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CFT_pay">
+      <soap12:operation soapAction="http://tempuri.org/CFT_pay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_PhoneNum">
+      <soap12:operation soapAction="http://tempuri.org/Get_PhoneNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CFT_updateOrder">
+      <soap12:operation soapAction="http://tempuri.org/CFT_updateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderList">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <soap12:operation soapAction="http://tempuri.org/GetProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList_Comm">
+      <soap12:operation soapAction="http://tempuri.org/GetProductList_Comm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoiceInfo">
+      <soap12:operation soapAction="http://tempuri.org/AddInvoiceInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPCUser">
+      <soap12:operation soapAction="http://tempuri.org/VerifyPCUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="mobilePay">
+    <wsdl:port name="mobilePaySoap" binding="tns:mobilePaySoap">
+      <soap:address location="http://m.emoney.cn/mobilewbs/mobilePay.asmx" />
+    </wsdl:port>
+    <wsdl:port name="mobilePaySoap12" binding="tns:mobilePaySoap12">
+      <soap12:address location="http://m.emoney.cn/mobilewbs/mobilePay.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link href="@Url.Content("~/Css/def/em.wx.css")"   rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Css/def/login.css")"   rel="stylesheet" type="text/css" />
+    <title>软件登录</title>
+    <style type="text/css">
+        .tijiao li {
+            width: 100%;
+        }
+
+        #popwin label {
+            text-align: center;
+            width: 75px;
+        }
+
+        #popwin p {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table class="ywcx">
+            <tr>
+                <td class="td_first">
+                    <a href="#"></a>
+
+                </td>
+                <td class="td_second">
+                    <a href="#"></a>
+
+                </td>
+                <td class="td_third">
+                    <a href="#"></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_30">密码查询</td>
+                <td class="td_30">到期日查询</td>
+                <td class="td_30">积分服务</td>
+            </tr>
+            <tr>
+                <td class="td4">
+                    <a href="#"></a>
+                </td>
+                <td class="td5">
+                    <a href="#"></a>
+                </td>
+                <td class="td6">
+                    <a href="#"></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_30">购买充值</td>
+                <td class="td_30">我要优惠</td>
+                <td class="td_30">软件下载</td>
+            </tr>
+        </table>
+    </div>
+    <div id="login">
+        @using (Html.BeginForm("StockPC", "Ywcx", FormMethod.Post))
+        {
+            
+            <div class="popwin" id="popwin">
+                <div class="pwinset">
+                    <p>
+                        请输入您的电脑版账号与密码，才可以享受购买优惠！
+
+                    </p>
+                    <section>
+                        <div class="ln">
+                            <label>EMFXT号：</label><input type="text" onclick="close()" class="inp" name="txt_name" id="textfield" maxlength="11" />
+                        </div>
+                        <div class="ln" style="border-top: none;">
+                            <label>产品密码：</label><input type="password" class="inp" name="txt_pwd" id="Password1" maxlength="6" />
+                        </div>
+                    </section>
+                    <section>
+                        <div class="tijiao">
+                            <ul>
+                                <li>
+                                    <input type="submit" value="登录" name="action" class="btn" /></li>
+
+                            </ul>
+                        </div>
+
+                    </section>
+                    <div class="close" onclick=" location.assign('Index');">×</div>
+                </div>
+            </div>
+        }
+        <div class="index_bottom">
+            益盟操盘手 创建于2002年<br />
+            2013 益盟操盘手 版权所有<br />
+            ICP许可证号 沪ICP备06000340
+        </div>
+        <br />
+    </div>
+</body>
+</html>

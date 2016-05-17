@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link href="@Url.Content("~/Css/def/style_new.css")"   rel="stylesheet" type="text/css" />
+    <title>EM/RTX号验证</title>
+    <script type="text/javascript">
+
+        function clearText(field) {
+            if (field.defaultValue == field.value) {
+                field.value = '';
+
+            }
+            else if (field.value == '') {
+                field.value = field.defaultValue;
+            }
+        }
+
+
+
+        function psw(el) {
+            if (el.value == '请输入密码') {
+                el.value = '';
+                el.type = 'password';
+            }
+        }
+        function txt(el) {
+            if (!el.value) {
+                el.type = 'text';
+                el.value = '请输入密码';
+            }
+        }
+        function clearText2(field) {
+            var val = document.getElementById("mima").value;
+
+            if (field.defaultValue == '') {
+                document.getElementById("mima").style.background = "url(images/white.png)";
+            }
+            else if (field.value == field.value) {
+                document.getElementById("mima").style.background = "url(images/mima.png)";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login">
+        <div class="detail">
+            请先登录您的操盘手账号
+        </div>
+        @using (Html.BeginForm("StockPC", "Ywcx", FormMethod.Post))
+        {
+            <div>
+                <input type="text" value="请输入EM/RTX号" class="txt" name="txt_name" maxlength="11" onfocus="clearText(this)" onblur="clearText(this)" />
+
+            </div>           
+
+            <div>
+                <input id="mima" type="text" value="请输入密码" class="txt2" name="txt_pwd" maxlength="6" onfocus="psw(this)" onblur="txt(this) " />
+
+            </div>
+            <p class="lg_rt">
+                <a href="sms:106909990909">立即注册</a>&nbsp;&nbsp;<a href="sms:106695887109">忘记密码</a>
+
+            </p>
+            <div class="check">
+                <center><input type="submit" value="登 录" name="action" class="btn" /></center>
+            </div>
+        }
+    </div>
+</body>
+</html>

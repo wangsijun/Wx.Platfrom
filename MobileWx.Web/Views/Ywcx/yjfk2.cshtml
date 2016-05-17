@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "意见反馈";
+    ViewBag.css = @Url.Content("~/Css/def/style_new.css");
+    ViewBag.js = @Url.Content("~/Js/jquery-1.4.2.min.js");
+    ViewBag.js2 = @Url.Content("~/Js/jquery.min.js");
+    Layout = "~/Views/Shared/_LayoutYwcx.cshtml";
+}
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Hidden1').hide();
+        var val;
+        $(".type").click(function () {
+            val = $("[name='CheckBox']:checked").val();
+            $('#Hidden1').val(val);
+        });
+
+
+
+
+    }
+)</script>
+<script type="text/javascript">
+
+    function clearText(field) {
+        if (field.defaultValue == field.value) {
+            field.value = '';
+
+        }
+        else if (field.value == '') {
+            field.value = field.defaultValue;
+        }
+    }
+</script>
+
+
+
+<body style="background-color: rgb(244,244,244);">
+    <div class="yjfk">
+        <div class="top">
+            感谢您提出的宝贵意见，我们将努力改善！
+        </div>
+        @using (Html.BeginForm("StockYk", "Ywcx", FormMethod.Post))
+        {
+            <p class="p1">
+                ①&nbsp;&nbsp;选择类型
+            </p>
+            <div class="type">
+                <ul>
+                    <li>
+                        <input id="CheckBox1" type="radio" name="CheckBox" value="1" />&nbsp;功能类
+                    </li>
+                    <li>
+                        <input id="CheckBox2" type="radio" name="CheckBox" value="2" />&nbsp;操作类
+                    </li>
+                    <li>
+                        <input id="CheckBox3" type="radio" name="CheckBox" value="3" />&nbsp;培训类
+                    </li>
+                    <li>
+                        <input id="CheckBox4" type="radio" name="CheckBox" value="4" />&nbsp;意见类
+                    </li>
+                    <li>
+                        <input id="CheckBox5" type="radio" name="CheckBox" value="5" />&nbsp;充值类
+                    </li>
+                </ul>
+
+
+
+            </div>
+            <p class="p1">
+                ②&nbsp;&nbsp;填写内容
+            </p>
+            <div class="yj">
+                <textarea id="TextArea1" name="txt_content" class="txt" cols="20" rows="2"></textarea>
+            </div>
+            <p class="p2">
+                ③&nbsp;&nbsp;回访（选填）
+            </p>
+            <div class="lx">
+                <input type="text" value="请输入您的联系方式" class="txt" name="txt_phone" maxlength="11" onfocus="clearText(this)" onblur="clearText(this)" />
+
+            </div>
+            <p class="check">
+                <input type="submit" value="提  交" name="action" class="btn" />
+            </p>
+            <input id="Hidden1" type="hidden" value="" name="name1" />
+        }
+    </div>
+</body>
+

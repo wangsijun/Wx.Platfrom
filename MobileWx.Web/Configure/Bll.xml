@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects xmlns="http://www.springframework.net">
+	<!--正式-->
+	<!--<object id="BllWxResponse" type="MobileWx.Bll.BllWxResponse,MobileWx.Bll">
+		<property name="appid" value="wxe145cfef8c08317e"></property>
+		<property name="secret" value="97f4588fbf6b9a511bd8c46d338bcaf5"></property>
+		<property name="subscribeMessage" value="欢迎收听&lt;a href=&quot;http://www.emoney.cn/&quot;&gt;益盟操盘手&lt;/a&gt;手机平台。&#xA;有什么可以帮到您吗？ "></property>
+	</object>-->
+	<!--测试-->
+	<object id="BllWxResponse" type="MobileWx.Bll.BllWxResponse,MobileWx.Bll">
+		<!--<property name="appid" value="wxd6f5ed740f2026f9"></property>--> 
+    <property name="appid" value="wx961a3d47ca3e417d"></property>
+		<!--<property name="secret" value="162e93cf173c06b018d8da604277f6bd"></property>-->
+    <property name="secret" value="855a7e9f5f814d94efa162ab3b13314b"></property>
+    <property name="subscribeMessage" value="欢迎收听益盟操盘手手机平台。&#xA;有什么可以帮到您吗？ "></property>
+	</object>
+  <!--加强版-->
+  <object id="BllPlatformWxResponse" type="MobileWx.Bll.BllWxResponse,MobileWx.Bll">
+    <property name="appid" value="wx78a7a0d35943d7bf"></property>
+    <property name="secret" value="5d311ababa789815d8e47cb0cc58ddc0"></property>
+    <property name="subscribeMessage" value="欢迎收听益盟操盘手加强版手机平台。&#xA;有什么可以帮到您吗？ "></property>
+  </object>
+	<!--行情-->
+	<object id="sddquotes" type="Sys.SysCache.MCacheClient,Sys.SysCache">
+		<property name="Servers" value="122.225.112.70:11211"></property>
+	</object>
+	<!--评级-->
+	<object id="sdstockscoreex" type="Sys.SysCache.MCacheClient,Sys.SysCache">
+		<property name="Servers" value="122.225.112.70:11211"></property>
+	</object>
+	<!--综述-->
+	<object id="pgfirst_y" type="Sys.SysCache.MCacheClient,Sys.SysCache">
+		<property name="Servers" value="122.225.112.70:11211"></property>
+	</object>
+	<!--主力资金播报-->
+	<object id="zlbb" type="Sys.SysCache.MCacheClient,Sys.SysCache">
+		<property name="Servers" value="180.153.251.100:80"></property>
+	</object>
+  <object id="proggcq_y" type="Sys.SysCache.MCacheClient,Sys.SysCache">
+    <property name="Servers" value="122.225.112.70:11211;122.225.112.71:11211"></property>
+  </object>
+  <object id="BllDphq" type="MobileWx.Bll.BllDphq,MobileWx.Bll">
+
+	</object>
+	<object id="BllGgzd" type="MobileWx.Bll.BllGgzd,MobileWx.Bll">
+
+	</object>
+	<object id="BllYjcg" type="MobileWx.Bll.BllYjcg,MobileWx.Bll">
+
+	</object>
+</objects>
+
+

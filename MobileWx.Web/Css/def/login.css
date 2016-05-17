@@ -1,0 +1,269 @@
+﻿body, dl, dd, ul, ol, figure, h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, fieldset, legend, input, button, select, textarea {
+    margin: 0;
+    padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+html {
+    font-size: 100.01%;
+    height: 100%;
+    overflow-y: scroll;
+    cursor: default;
+    overflow-y: scroll;
+    -webkit-tap-highlight-color: transparent;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: #fff;
+    color: #444;
+    height: 100%;
+}
+
+body, button nput, select, textarea {
+    font: 12px/1.5 sans-serif;
+}
+
+img, fieldset {
+    border: 0 none;
+}
+
+img {
+    vertical-align: top;
+    -ms-interpolation-mode: bicubic;
+}
+
+a, a:active, a:hover {
+    outline: none;
+}
+
+    a:focus {
+        outline: thin dotted;
+    }
+
+    a, a:link {
+        color: #0000EE;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #551A8B;
+        }
+
+
+header {
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+
+.popwin {
+    width: 262px;
+    height: 247px;
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.25);
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    margin-left: -131px;
+}
+
+    .popwin .pwinset {
+        width: 260px;
+        height: 245px;
+        border-radius: 6px;
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #eee;
+    }
+
+        .popwin .pwinset header {
+            height: 35px;
+            border-radius: 6px 6px 0 0;
+            background-color: #E9E9E9;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .popwin .pwinset section {
+            padding: 20px;
+        }
+
+        .popwin .pwinset .btn {
+            width: 90%;
+            height: 38px;
+            border: 0;
+            background-color: #F90;
+            color: #fff;
+            /*border-radius: 3px;*/
+            cursor: pointer;
+            font-family: "微软雅黑";
+            font-size: 16px;
+        }
+
+        .popwin .pwinset .ln {
+            height: 38px;
+            border: 1px solid #ccc;
+            line-height: 38px;
+        }
+
+            .popwin .pwinset .ln:nth-child(1) {
+                border-radius: 6px 6px 0 0;
+            }
+
+            .popwin .pwinset .ln:nth-child(2) {
+                border-radius: 0 0 6px 6px;
+            }
+
+            .popwin .pwinset .ln label {
+                display: inline-block;
+                width: 100px;
+                text-align: right;
+            }
+
+            .popwin .pwinset .ln .inp {
+                display: inline-block;
+                width: 110px;
+                height: 30px;
+                border: none;
+                background: none;
+            }
+
+        .popwin .pwinset .close {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            text-align: center;
+            line-height: 30px;
+            overflow: hidden;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            top: -8px;
+            right: -8px;
+            background-color: rgba(255,102,0,0.6);
+            cursor: pointer;
+        }
+
+            .popwin .pwinset .close:hover,
+            .popwin .pwinset .close:active {
+                background-color: rgba(255,204,0,1);
+                color: #fff;
+            }
+
+/*-遮罩-*/
+
+
+
+/*#href
+{
+    width: 90%;
+    height: 38px;
+    border: 0;
+    background-color: #F90;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}*/
+.tijiao {
+    width: 100%;
+}
+
+    .tijiao li {
+        list-style: none;
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        text-align: center;
+        float: left;
+    }
+
+/*login_back*/
+/*----------------------login---------------------*/
+
+
+
+
+
+/*------------*/
+#popwin .pwinset p {
+    margin-top: 20px;
+    line-height: 28px;
+}
+
+#popwin .pwinset .ln {
+    height: 50px;
+    border-radius: 5px;
+    border-color: rgb(233,184,127);
+}
+
+#popwin .pwinset table {
+    line-height: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+#popwin {
+    background-color: rgb(244,241,238);
+}
+
+    #popwin #td_lf {
+        width: 20%;
+    }
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.pop_p {
+    padding-left: 10px;
+}
+
+
+#login_body {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(images/login_back.png);
+    background-repeat: no-repeat;
+    background-position-x:-3px;
+    background-position-y:0;
+    background-size: 100%;
+}
+
+
+
+.rgba_back {
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0,0,0,0.35);
+}
