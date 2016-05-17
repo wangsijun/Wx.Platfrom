@@ -140,10 +140,6 @@
       <Project>{ffc7b942-a09e-403c-9209-84d9dba592e3}</Project>
       <Name>Sys.Spring</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sys.SysCache\Sys.SysCache.csproj">
-      <Project>{10538318-1957-4d1d-9d8a-fd1a2ffd6ea6}</Project>
-      <Name>Sys.SysCache</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sys.Utility\Sys.Utility.csproj">
       <Project>{d2a6db30-618d-4fa1-a544-c24d6c903d53}</Project>
       <Name>Sys.Utility</Name>

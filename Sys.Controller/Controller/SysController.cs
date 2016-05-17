@@ -13,7 +13,7 @@ namespace Sys.Controller
     public class SysController : System.Web.Mvc.Controller
     {
         public static string WsServer = ConfigurationManager.AppSettings["WsServer"];
-        public const string wx_token = "em_mobile";
+        public const string wx_token = "fjbs_mobile";
         private bool endAction = false;
         protected override void  OnActionExecuting(ActionExecutingContext filterContext)
         {

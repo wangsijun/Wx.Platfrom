@@ -2,8 +2,7 @@
 using MobileWx.Model.ProWx;
 using MobileWx.Test.ServiceReference1;
 using Newtonsoft.Json;
-using Sys.Spring;
-using Sys.SysCache;
+using Sys.Spring; 
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -46,39 +45,11 @@ namespace MobileWx.Test
             public long TimeSpan { get; set; }
             public string uid { get; set; }
         }
-    }
-
-
-
-
-
+    } 
     internal class Program
-    {
-        public static BllGgzd bllGgzd = (BllGgzd)SysSpring.GetByName("BllGgzd");
-        public static MCacheClient pgfirst_y = (MCacheClient)SysSpring.GetByName("pgfirst_y");
-        public static MCacheClient sdstockscoreex = (MCacheClient)SysSpring.GetByName("sdstockscoreex");
-        private static RCacheClient cache = new RCacheClient();
-        public static MCacheClient Sddquotes { get; set; } = (MCacheClient)SysSpring.GetByName("sddquotes");
-
-
+    { 
         public static void Main(string[] args)
-        {
-            var wxList = FileUtility.ReadJson<List<WxArticle>>(@"D:\web\wx.mt.emoney.cn\web\Json\daShi.json");
-            MCacheClient mcache = (MCacheClient)SysSpring.GetByName("proggcq_y");
-
-            var resultStr = GetHttpPostResponse($"http://emwxgpys.emoney.cn/dyh/common/Index?code={300059}");
-
-            var resultJson = JsonConvert.DeserializeObject<List<ProGgcx>>(resultStr);
-            var sssss = resultJson.Select(item => new WxArticle()
-            {
-                PicUrl = item.ImageUrl,
-                Title = item.title,
-                Url = item.LinkUrl
-            }).ToList();
-
-
-
-
+        { 
         }
         private static string PadLeftEx(string str, int totalByteCount, char c)
         {

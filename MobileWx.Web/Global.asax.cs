@@ -1,7 +1,6 @@
 ﻿using MobileWx.Bll;
 using MobileWx.Model;
-using Sys.Spring;
-using Sys.SysCache;
+using Sys.Spring; 
 using Sys.Utility;
 using System;
 using System.Collections.Generic;
@@ -23,22 +22,22 @@ namespace MobileWx.Web
 
     public class MvcApplication : System.Web.HttpApplication
     {
-        public static MCacheClient sdstockscoreex = (MCacheClient)SysSpring.GetByName("sdstockscoreex");
-        public static MCacheClient pgfirst_y = (MCacheClient)SysSpring.GetByName("pgfirst_y");
+        //public static MCacheClient sdstockscoreex = (MCacheClient)SysSpring.GetByName("sdstockscoreex");
+        //public static MCacheClient pgfirst_y = (MCacheClient)SysSpring.GetByName("pgfirst_y");
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+        { 
             routes.MapRoute(
                 "Default",
                 "{controller}/{action}/{id}",
                  new { controller = "Ywcx", action = "Index", id = "" },
                  null
                 );
+
         }
         System.Threading.Timer t1 = null;
 

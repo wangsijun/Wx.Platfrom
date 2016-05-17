@@ -14,7 +14,7 @@ namespace MobileWx.Bll
     {
         private static BllSubscribeUser _me;
 
-        public BllSubscribeUser(string responesId= "BllWxResponse") : base(responesId)
+        public BllSubscribeUser(string responesId = "BllWxResponse") : base(responesId)
         {
 
         }
@@ -26,8 +26,7 @@ namespace MobileWx.Bll
             return _me;
         }
 
-        private readonly static string URL_CODE_TO_ACCESS_TOKEN =
-            "https://api.weixin.qq.com/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type=authorization_code";
+        private readonly static string URL_CODE_TO_ACCESS_TOKEN = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type=authorization_code";
 
         /// <summary>
         /// 从微信服务器取数据，新建或更新用户信息
@@ -55,8 +54,7 @@ namespace MobileWx.Bll
         public WxAuthorizeAccessToken GetAccessTokenByAuthorizeCode(string code)
         {
             //请求url
-            string url = string.Format(URL_CODE_TO_ACCESS_TOKEN,
-                bllWxResponse.appid, bllWxResponse.secret, code);
+            string url = string.Format(URL_CODE_TO_ACCESS_TOKEN, bllWxResponse.appid, bllWxResponse.secret, code);
 
             try
             {
@@ -68,7 +66,6 @@ namespace MobileWx.Bll
                 {
                     return tokeninfo;
                 }
-
             }
             catch (Exception ex) { }
 

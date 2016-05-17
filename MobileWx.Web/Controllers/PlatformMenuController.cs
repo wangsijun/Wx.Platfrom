@@ -37,8 +37,7 @@ namespace MobileWx.Web.Controllers
         public JsResult create()
         {
             SysResult rtn = new SysResult();
-
-            string msdyurl = WxController.SiteUrl + "/Activity/Msdy";
+             
             BllWxResponse menus = new BllWxResponse();
             menus.button = new List<WxMenuItem>();
             menus.button.Add(new WxMenuItem()
